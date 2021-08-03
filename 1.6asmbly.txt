@@ -208,37 +208,15 @@ c FIG.6 instrument pin dimensions
 c Empty guide tube geometry at dashpot
 15 cz 0.50419 $ water
 16 cz 0.54610 $ zircaloy
-c BP Plenum Geometry
-c 17 cz 0.21400 $ air
-c 18 cz 0.23051 $ SS304
-c use surface 11 for helium
-c use surface 12 for SS304
-c use surface 15 for water
-c use surface 16 for zircaloy
-c 401 cz 0.24130
-c 402 cz 0.42672
-c control rod pin plenum geometry
-c 403 cz 0.06459 $ inconel
-c 404 cz 0.38608 $ helium
-c 405 cz 0.37845
-c surface 12 ss304
-c surface 13 water
-c surface 14 zircaloy
-c 406 cz 0.37338
-c 407 cz 0.38227
 c Axial Fuel Rod Dimensions
 90 pz 230.000
 91 pz 201.876
 92 pz 193.049
-c 126 pz 191.532
 93 pz 189.704
 94 pz 187.164
-c 130 pz 185.558
 95 pz 185.164
 96 pz 181.806
-c 131 pz 173.778
 97 pz 172.508
-c 127 pz 171.238
 98 pz 134.725
 99 pz 129.010
 100 pz 82.528
@@ -249,14 +227,10 @@ c 127 pz 171.238
 105 pz -27.581
 106 pz -74.063
 107 pz -79.778
-c 132 pz -86.572
 108 pz -126.260
 109 pz -131.975
-c 133 pz -188.172
-c 128 pz -189.442
 110 pz -189.48
 125 pz -190.042
-c 129 pz -191.34
 111 pz -192.8379
 112 pz -193.252
 113 pz -195.000
@@ -264,8 +238,6 @@ c 129 pz -191.34
 115 pz -230.000
 c Upper Fuel Pin Plenum
 116 cz 0.06459 $ inconel material
-c use surface 2 for the outer radius of helium
-c use surface 3 for the outer radius of the zircaloy
 c ----------------------------------------------------------------------------
 117 px -0.61015 $ water dimensions for fuel with grid top/bottom
 118 px 0.61015 $ water dimensions for fuel with grid top/bottom
@@ -275,9 +247,6 @@ c ----------------------------------------------------------------------------
 122 px 0.61049 $ water dimensions for fuel with grid intermediate
 123 py -0.61049 $ water dimensions for fuel with grid intermediate
 124 py 0.61049 $ water dimensions for fuel with grid intermediate
-c FIG.4 empty guide tube above dashpot dimensions
-c 21 cz 0.56134 $ water radius (SAME as surf 13)
-c 22 cz 0.60198 $ zircaloy shell (SAME as surf 14)
 c Basic fuel pin lattice cell
 5 px  0.62992 $ 1st side of square lattice
 6 px -0.62992 $ 2nd side of square lattice
@@ -288,83 +257,13 @@ c Basic square assembly
 36 px -10.70864 $ 2nd side of square assembly
 37 py 10.70864 $ 3rd side of square assembly
 38 py -10.70864 $ 4th side of square assembly
-c 135 px 10.74798 $ grid sleeve
-c 136 px -10.74798 $ grid sleeve
-c 137 py 10.74798 $ grid sleeve
-c 138 py -10.74798 $ grid sleeve
 c core dimensions
-c 40 cz 187.960 $ core barrel inner rad. SS304
-c 41 cz 193.675 $ core barrel outer rad. SS304
-c 42 cz 194.840 $ neutron shield panel inner rad. SS304
-c 43 cz 201.630 $ neutron shield panel outer rad. SS304
-c 44 cz 219.150 $ pressure vessel liner inner rad. SS304
-c 45 cz 219.710 $ pressure vessel liner outer rad. SS304
-c 46 cz 241.300 $ pressure vessel outer radius CS508
-c 147 px -74.96048
-c 148 px 74.96048
-c 149 py -160.6296
-c 150 py 160.6296
-c 151 px -117.79504
-c 152 px 117.79504
-c 153 py -139.21232
-c 154 py 139.21232
-c 155 px -139.21232
-c 156 px 139.21232
-c 157 py -117.79504
-c 158 py 117.79504
-c 159 px -160.6296
-c 160 px 160.6296
-c 161 py -74.96048
-c 162 py 74.96048
-c 47 px -75.12318 $ added water gap (0.1627cm)
-c 48 px 75.12318 $ added water gap (0.1627cm)
-c 49 py -160.7923 $ added water gap (0.1627cm)
-c 50 py 160.7923 $ added water gap (0.1627cm)
-c 51 px -117.95774 $ added water gap (0.1627cm)
-c 52 px 117.95774 $ added water gap (0.1627cm)
-c 53 py -139.37502 $ added water gap (0.1627cm)
-c 54 py 139.37502 $ added water gap (0.1627cm)
-c 55 px -139.37502 $ added water gap (0.1627cm)
-c 56 px 139.37502 $ added water gap (0.1627cm)
-c 57 py -117.95774 $ added water gap (0.1627cm)
-c 58 py 117.95774 $ added water gap (0.1627cm)
-c 59 px -160.7923 $ added water gap (0.1627cm)
-c 60 px 160.7923 $ added water gap (0.1627cm)
-c 61 py -75.12318 $ added water gap (0.1627cm)
-c 62 py 75.12318 $ added water gap (0.1627cm)
-c 63 px -77.34568 $ added thickness of baffle (2.22250cm)
-c 64 px 77.34568 $ added thickness of baffle (2.22250cm)
-c 65 py -163.0148 $ added thickness of baffle (2.22250cm)
-c 66 py 163.0148 $ added thickness of baffle (2.22250cm)
-c 67 px -120.18024 $ added thickness of baffle (2.22250cm)
-c 68 px 120.18024 $ added thickness of baffle (2.22250cm)
-c 69 py -141.59752 $ added thickness of baffle (2.22250cm)
-c 70 py 141.59752 $ added thickness of baffle (2.22250cm)
-c 71 px -141.59752 $ added thickness of baffle (2.22250cm)
-c 72 px 141.59752 $ added thickness of baffle (2.22250cm)
-c 73 py -120.18024 $ added thickness of baffle (2.22250cm)
-c 74 py 120.18024 $ added thickness of baffle (2.22250cm)
-c 75 px -163.0148 $ added thickness of baffle (2.22250cm)
-c 76 px 163.0148 $ added thickness of baffle (2.22250cm)
-c 77 py -77.34568 $ added thickness of baffle (2.22250cm)
-c 78 py 77.34568 $ added thickness of baffle (2.22250cm)
-c 79 px 242.0
-c 80 px -242.0
-c 81 py 242.0
-c 82 py -242.0
 10 pz 232.0
 20 pz -231
-c 83 so 450
-c 84 px -241.3
-c 85 px 241.3
-c 86 py -241.3
-c 87 py 241.3
 88 pz 231.0
 89 pz 231.5
 
 c DATA CARDS
-c Fuel: UO2 3.1%
-c m1 8016.71c 2.0 92235.71c 0.031 92238.71c 0.969 $ 600K temp
 c Helium
 m2 2003.71c -0.00064 2004.71c -0.99936 $ using 600K temp
 c Zircaloy-4
@@ -377,56 +276,18 @@ m3 8016.71c -0.0012 8017.71c -5.5316e-06 24050.71c -4.1740e-05
      50116.71c -0.0021 50117.71c -0.0011 50118.71c -0.0035
      50119.71c -0.0012 50120.71c -0.0048 50122.71c -6.8927e-04
      50124.71c -8.7608e-04
-c Water
-c m4 1001.71c 2 8016.71c 1 $ 600K
-c mt4 lwtr.04t
-c Stainless Steel 304 @ 600K
-c m5 14028.71c -0.0055 14029.71c -2.9016e-04 14030.71c -1.9787e-04
-c      24050.71c -0.0079 24052.71c -0.1592 24053.71c -0.0184 24054.71c -0.0047
-c      25055.71c -0.0200 26054.71c -0.0387 26056.71c -0.6294 26057.71c -0.0148
-c      26058.71c -0.0020 28058.71c -0.0673 28060.71c -0.0268 28061.71c -0.0012
-c      28062.71c -0.0038 28064.71c -0.0010
-c Fuel: UO2 2.4%
-c m6 8016.71c 2.0 92235.71c 0.024 92238.71c 0.976 $ 600K temp
 c Fuel: UO2 1.6%
 m7 8016.71c 2.0 92235.71c 0.016 92238.71c 0.984 $ 600K temp
-c Carbon Steel 508
-c m8 6012.42c -0.0027 6013.42c -3.2338e-05 25055.71c -0.0075
-c      15031.71c -2.4992e-04 16032.71c -2.3683e-04 16033.71c -1.9239e-09
-c      16034.71c -1.1110e-05 16036.71c -4.0873e-08 14028.71c -0.0037
-c      14029.71c -1.9321e-04 14030.71c -1.3175e-04 28058.71c -0.0050
-c      28060.71c -0.0020 28061.71c -8.8750e-05 28062.71c -2.8761e-04
-c      28064.71c -7.5609e-05 24050.71c -1.4607e-04 24052.71c -0.0029
-c      24053.71c -3.3857e-04 24054.71c -8.5866e-05 42092.71c -8.7687e-04
-c      42094.71c -5.6188e-04 42095.71c -9.8112e-04 42096.71c -0.0010
-c      42097.71c -6.0473e-04 42098.71c -0.0015 42100.71c -6.3398e-04
-c      23000.71c -4.999755e-04 41093.71c -9.9986e-05 29063.71c -0.0014
-c      29065.71c -6.3039e-04 20040.71c -1.4496e-04 20042.71c -1.0159e-06
-c      20043.71c -2.1702e-07 20044.71c -3.4313e-06 20046.71c -6.8787e-09
-c      20048.71c -3.3556e-07 5010.71c -5.4924e-06 5011.71c -2.4441e-05
-c      22046.71c -1.1879e-05 22047.71c -1.0945e-05 22048.71c -1.1076e-04
-c      22049.71c -8.2976e-06 22050.71c -8.1069e-06 13027.71c -2.4988e-04
-c      26054.71c -0.0545 26056.71c -0.8867 26057.71c -0.0208 26058.71c -0.0028
 c Air
 m9 8016.71c -0.2280 8017.71c -6.06475e-04 7014.71c -0.7428 7015.71c -0.0029
      18036.71c -7.6408e-05 18038.71c -1.5207e-05 18040.71c -0.0253
      6012.42c -2.1849e-04 6013.42c -2.6515e-06
-c Borosilicate Glass
-c m10 8016.71c -0.5466 8017.71c -1.42062e-03 14028.71c -0.3481 14029.71c -0.0183
-c      14030.71c -0.0125 13027.71c -0.0344 5010.71c -0.0071 5011.71c -0.0317
 c Inconel 718
 m11 14028.71c -0.0032 14029.71c -1.6908e-04 14030.71c -1.1530e-04
      24050.71c -0.0079 24052.71c -0.1587 24053.71c -0.0183 24054.71c -0.0047
      25055.71c -0.0087 26054.71c -0.0162 26056.71c -0.2632 26057.71c -0.0062
      26058.71c -8.3768e-04 28058.71c -0.3440 28060.71c -0.1371
      28061.71c -0.0061 28062.71c -0.0196 28064.71c -0.0052
-c B4C
-c m12 5010.71c -0.1436 5011.71c -0.6389 6012.42c -0.2150 6013.42c -0.0026
-c AgInCd
-c m13 47107.71c -0.4110 47109.71c -0.3890 48106.71c -5.8648e-04
-c      48108.71c -4.2620e-04 48110.71c -0.0061 48111.71c -0.0063
-c      48112.71c -0.0120 48113.71c -0.0061 48114.71c -0.0146 48116.71c -0.0039
-c      49113.71c -0.0063 49115.71c -0.1437
 c Borated Water
 m14 5010.71c -1.7881e-04 5011.71c -7.9570e-04 1001.71c -0.1110
      1002.71c -3.4566e-05 8016.71c -0.8857 8017.71c -2.3575e-03
