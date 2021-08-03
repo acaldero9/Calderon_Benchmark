@@ -58,7 +58,7 @@ c intermediate water breaks between grids
 37 3 -6.55 -5 6 -7 8 -112 113 u=9 imp:n=1 $ zircaloy pin
 38 16 -3.68384807049 -5 6 -7 8 -113 114 u=9 imp:n=1 $ nozzle/spt plate SS
 39 14 -0.740582067516 -5 6 -7 8 -114 115 u=9 imp:n=1 $ b water
-40 0 (5:-6:7:-8):(90:-115) u=9 imp:n=1 $ void outside universe
+c 40 0 (5:-6:7:-8):(90:-115) u=9 imp:n=1 $ void outside universe
 c ----------------------------------------------------------------------------
 c INSTRUMENT TUBE PIN U=2
 41 14 -0.740582067516 -5 6 -7 8 -90 92 u=2 imp:n=1 $ borated water axial
@@ -107,7 +107,7 @@ c bare instr. tube
 71 9 -0.000616 -11 -114 115 u=2 imp:n=1 $ air
 72 3 -6.55 11 -12 -114 115 u=2 imp:n=1 $ zircaloy
 73 14 -0.740582067516 12 -5 6 -7 8 -114 115 u=2 imp:n=1 $ borated water
-74 0 (5:-6:7:-8):(90:-115) u=2 imp:n=1 $ void outside universe
+c 74 0 (5:-6:7:-8):(90:-115) u=2 imp:n=1 $ void outside universe
 c ----------------------------------------------------------------------------
 c EMPTY GUIDE TUBE U=3
 75 14 -0.740582067516 -5 6 -7 8 -90 91 u=3 imp:n=1 $ borated water axial
@@ -164,7 +164,7 @@ c dashpot guide tube
 111 14 -0.740582067516 16 117 -118 119 -120 -125 113 u=3 imp:n=1 $ b water
 112 15 -0.981002531906 -5 6 -7 8 -113 114 u=3 imp:n=1 $ nozzle borated water
 113 14 -0.740582067516 -5 6 -7 8 -114 115 u=3 imp:n=1 $ borated water axial
-114 0 (5:-6:7:-8):(90:-115) u=3 imp:n=1 $ void outside universe
+c 114 0 (5:-6:7:-8):(90:-115) u=3 imp:n=1 $ void outside universe
 c ----------------------------------------------------------------------------
 c ----------------------------------------------------------------------------
 115 0 -5 6 -7 8 u=6 imp:n=1 lat=1
