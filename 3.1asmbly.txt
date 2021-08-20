@@ -433,10 +433,11 @@ e2 1.00E-09 1.05E-09 1.10E-09 1.16E-09 1.22E-09 1.28E-09 1.34E-09 1.41E-09
      1.00E+01 1.05E+01 1.11E+01 1.16E+01 1.22E+01 1.28E+01 1.34E+01 1.41E+01
      1.48E+01 1.56E+01 1.63E+01 1.72E+01 1.80E+01 1.89E+01 1.99E+01 2.09E+01
      2.19E+01 2.30E+01 $ for f2 tally neutrons from thermal to fast
-fmesh4:n geom=xyz origin=-10.70864 -10.70864 187.164
-     imesh=10.70864 iints=22
-     jmesh=10.70864 jints=22
-     kmesh=189.704 kints=3
-     out=ij
+c fmesh4:n geom=xyz origin=-10.70864 -10.70864 187.164
+c      imesh=10.70864 iints=22
+c      jmesh=10.70864 jints=22
+c      kmesh=189.704 kints=3
+c      out=ij
 kcode 200000 0.2 170 275
 ksrc -1.25984 0.0 0.0 1.25984 0.0 0.0 0.0 1.25984 0.0 0.0 -1.25984 0.0
+print
