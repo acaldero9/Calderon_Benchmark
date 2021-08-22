@@ -320,7 +320,7 @@ c Basic square assembly
 c core dimensions
 10 pz 231.0
 20 pz -231
-88 pz 232.0
+c 88 pz 232.0
 89 so 350
 805 px 0.7
 806 px -0.7
