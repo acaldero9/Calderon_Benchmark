@@ -1,6 +1,7 @@
-1.6 Assembly- Calderon
+3.1% Assembly- Calderon
 c DESCRIPTION OF FILE
-c This file contains code describing an assembly with 1.6% enrichment
+c This file contains code describing an assembly with 3.1% enrichment
+c with an axial surface tally.
 c
 c Cell cards
 c ----------------------------------------------------------------------------
