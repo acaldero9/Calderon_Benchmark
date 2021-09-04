@@ -10,7 +10,7 @@ output files for each input file is included as well.
 -------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------
-1.6% Fuel Assembly: final61.txt, final162.txt, final163.txt
+1.6% Fuel Assembly: final161.txt, final162.txt, final163.txt
 In total, I have chosen to use three tallies on the 1.6% enriched fuel 
 assembly. Each tally will correspond to one of the three input files. The 
 first tally is a volume tally (f14:n), denoted by "1" at the end
