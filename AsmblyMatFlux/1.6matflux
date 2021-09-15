@@ -315,10 +315,10 @@ c Basic square assembly
 36 px -10.70864 $ 2nd side of square assembly
 37 py 10.70864 $ 3rd side of square assembly
 38 py -10.70864 $ 4th side of square assembly
-135 px 11
-136 px -11
-137 py 11
-138 py -11
+c 135 px 11
+c 136 px -11
+c 137 py 11
+c 138 py -11
 c core dimensions
 10 pz 231.0
 20 pz -231.0
