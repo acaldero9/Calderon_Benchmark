@@ -1,0 +1,36 @@
+'SCALE comment
+=origen
+
+      % ORIGEN comment %
+      
+bounds{ ... }
+solver{ ... }
+options{ ... }
+
+case(A){
+    title="my title"
+    
+    % setup
+    lib{ ... }
+    mat{ ... }
+    % operating history
+    time=[31 365] % days
+    flux{ ... } % or power{ ... }
+    
+    % archival
+    print{ ... }
+    save{ ... }
+    
+    % emission calcs
+    gamma{ ... }
+    neutron{ ... }
+
+}
+
+case(B){
+    ...
+}
+
+% more cases?
+
+end
