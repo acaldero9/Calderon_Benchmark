@@ -1,0 +1,21 @@
+Volume Calculation
+c CELL CARD
+7 0 -3 -94 97 imp:n=1
+8 14 -0.740582067516 (3 -94 97) (117 -118 119 -120 -94 97) imp:n=1 $ b water
+9 0 (-117:118:-119:120:94:-97)
+
+c SURFACE CARD
+3 cz 0.45720 $ outer radius of clad
+94 pz 187.164
+97 pz 172.508
+117 px -0.61015 $ water dimensions for fuel with grid top/bottom
+118 px 0.61015 $ water dimensions for fuel with grid top/bottom
+119 py -0.61015 $ water dimensions for fuel with grid top/bottom
+120 py 0.61015 $ water dimensions for fuel with grid top/bottom
+
+c DATA CARD
+c Borated Water
+m14 5010.71c -1.788125894503523e-04 5011.71c -7.956993086616333e-04
+     1001.71c -0.110956643252363 1002.71c -3.456626097114939e-05
+     8016.71c -0.887676775009662 8017.71c -3.575035788913169e-04
+mt14 lwtr.16t
