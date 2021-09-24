@@ -1,0 +1,29 @@
+Laboratory 1 Computational- Calderon
+c DESCRIPTION:
+c THIS FILE WILL CALCULATE THE GEOMETRIC EFFICIENCY 
+c COBALT-60 SOURCE
+c Source is placed 2.9cm above detector
+c ----------------------------------------------------------------------------
+c CELL CARDS
+1 1 -3.67 -1 2 -3 imp:p=1 $ detector
+2 0 (1:-2:3) -4 imp:p=1 $ outside detector but in the world
+3 0 4 imp:p=0 $ outside the known world 
+
+c SURFACE CARDS
+1 cz 4
+2 pz 0
+3 pz 8
+4 so 50
+
+c DATA CARDS
+c Materials
+c NaI 3.67 g/cm^3
+m1 11000.84p 1. 53000.84p 1.
+c Air 0.001225 g/cm^3
+c m2 7000.84p 0.78 8000.84p .21 18000.84p .01
+mode p
+nps 1000000
+sdef pos 0 0 16.6 erg d1 par 2
+si1 L 0.032 0.662
+sp1 D 0.06 0.85
+f1:p 3 $ surface tally

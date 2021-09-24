@@ -1,0 +1,311 @@
+          Code Name & Version = MCNP_6.20, 6.2.0
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  +-----------------------------------------------------------------------+
+  | Copyright (2018).  Los Alamos National Security, LLC.  All rights     !
+  | reserved.                                                             !
+  |  This material was produced under U.S. Government contract            !
+  | DE-AC52-06NA25396 for Los Alamos National Laboratory, which is        !
+  | operated by Los Alamos National Security, LLC for the U.S.            !
+  | Department of Energy. The Government is granted for itself and        !
+  | others acting on its behalf a paid-up, nonexclusive, irrevocable      !
+  | worldwide license in this material to reproduce, prepare derivative   !
+  | works, and perform publicly and display publicly. Beginning five (5)  !
+  | years after February 14, 2018, subject to additional five-year        !
+  | worldwide renewals, the Government is granted for itself and others   !
+  | acting on its behalf a paid-up, nonexclusive, irrevocable worldwide   !
+  | license in this material to reproduce, prepare derivative works,      !
+  | distribute copies to the public, perform publicly and display         !
+  | publicly, and to permit others to do so. NEITHER THE UNITED STATES    !
+  | NOR THE UNITED STATES DEPARTMENT OF ENERGY, NOR LOS ALAMOS NATIONAL   !
+  | SECURITY, LLC, NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY,        !
+  | EXPRESS OR IMPLIED, OR ASSUMES ANY LEGAL LIABILITY OR RESPONSIBILITY  !
+  | FOR THE ACCURACY, COMPLETENESS, OR USEFULNESS OF ANY INFORMATION,     !
+  | APPARATUS, PRODUCT, OR PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE  !
+  | WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS.                            !
+  +-----------------------------------------------------------------------+
+  
+1mcnp     version 6     ld=02/20/18                     09/23/21 22:33:56 
+ *************************************************************************                 probid =  09/23/21 22:33:56 
+ n=geomeff2 tasks 4
+
+ 
+  comment.  Physics models disabled.
+         1-       Laboratory 1 Computational- Calderon
+         2-       c DESCRIPTION:
+         3-       c THIS FILE WILL CALCULATE THE GEOMETRIC EFFICIENCY
+         4-       c COBALT-60 SOURCE
+         5-       c Source is placed 2.9cm above detector
+         6-       c ----------------------------------------------------------------------------
+         7-       c CELL CARDS
+         8-       1 1 -3.67 -1 2 -3 imp:p=1 $ detector
+         9-       2 0 (1:-2:3) -4 imp:p=1 $ outside detector but in the world
+        10-       3 0 4 imp:p=0 $ outside the known world
+        11-       
+        12-       c SURFACE CARDS
+        13-       1 cz 4
+        14-       2 pz 0
+        15-       3 pz 8
+        16-       4 so 50
+        17-       
+        18-       c DATA CARDS
+        19-       c Materials
+        20-       c NaI 3.67 g/cm^3
+        21-       m1 11000.84p 1. 53000.84p 1.
+        22-       c Air 0.001225 g/cm^3
+        23-       c m2 7000.84p 0.78 8000.84p .21 18000.84p .01
+        24-       mode p
+        25-       nps 10000000
+        26-       sdef pos 0 0 16.6 erg d1 par 2
+        27-       si1 L 1.1732 1.3325
+        28-       sp1 D 1.0 0.9988
+        29-       f1:p 3 $ surface tally
+
+ ***************************************************
+ * Random Number Generator  =                    1 *
+ * Random Number Seed       =       19073486328125 *
+ * Random Number Multiplier =       19073486328125 *
+ * Random Number Adder      =                    0 *
+ * Random Number Bits Used  =                   48 *
+ * Random Number Stride     =               152917 *
+ ***************************************************
+
+ 
+  warning.    1 materials had unnormalized fractions. print table 40.
+1cells                                                                                                  print table 60
+
+                               atom        gram                                            photon                                      
+              cell      mat   density     density     volume       mass            pieces importance                                   
+
+        1        1        1  2.94887E-02 3.67000E+00 4.02124E+02 1.47579E+03           1  1.0000E+00                                   
+        2        2        0  0.00000E+00 0.00000E+00 5.23197E+05 0.00000E+00           1  1.0000E+00                                   
+        3        3        0  0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00           0  0.0000E+00                                   
+
+ total                                               5.23599E+05 1.47579E+03
+
+    minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+ 
+  comment.  threading will be used when possible in portions of mcnp6.
+ 
+  comment.  threading will be used for n/p/e table physics.
+ 
+  comment.  threading will generally not be used for model physics.
+
+          1 warning message so far.
+1cross-section tables                                                                                   print table 100
+     XSDIR used: C:\MY_MCNP\MCNP_DATA/xsdir_mcnp6.2
+
+     table    length
+
+                        tables from file xdata/mcplib84                                                  
+
+  11000.84p    4071  Update of MCPLIB04 Photon Compton Broadening Data For MCNP5 see LA-UR-    12-00018        01/03/12
+                     Energy range:   1.00000E-03  to  1.00000E+05 MeV.
+  53000.84p    8568  Update of MCPLIB04 Photon Compton Broadening Data For MCNP5 see LA-UR-    12-00018        01/03/12
+                     Energy range:   1.00000E-03  to  1.00000E+05 MeV.
+
+  total       12639
+
+ maximum photon energy set to    100.0 mev (maximum electron energy)
+
+                        tables from file xdata/el03                                                      
+
+  11000.03e    2337                                                                                          6/6/98    
+                     Energy range:   1.00000E-03  to  1.00000E+03 MeV.
+  53000.03e    2359                                                                                          6/6/98    
+                     Energy range:   1.00000E-03  to  1.00000E+03 MeV.
+
+1particles and energy limits                                                                            print table 101
+
+                         particle      maximum       smallest      largest       always        always
+                         cutoff        particle      table         table         use table     use model
+   particle type         energy        energy        maximum       maximum       below         above
+
+    2  p    photon      1.0000E-03    1.0000E+02    1.0000E+05    1.0000E+05    1.0000E+36    1.0000E+36
+    3  e    electron    1.0000E-03    1.0000E+02    1.0000E+02    1.0000E+02    1.0000E+36    1.0000E+36
+ 
+
+ ***********************************************************************************************************************
+
+ dump no.    1 on file geomeff2r     nps =           0     coll =              0     ctm =        0.00   nrn =          
+       0
+
+          1 warning message so far.
+1problem summary                                                                                                           
+
+      run terminated when    10000000  particle histories were done.
++                                                                                                    09/23/21 22:34:04 
+
+ =====>    4958.68 M histories/hr    (based on wall-clock time in mcrun)
+
+
+      Laboratory 1 Computational- Calderon     probid =  09/23/21 22:33:56 
+
+ photon creation     tracks      weight        energy            photon loss         tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source            10000000    1.0000E+00    1.2528E+00          escape             9906892    9.9069E-01    1.2326E+00
+ nucl. interaction        0    0.            0.                  energy cutoff            0    0.            3.0449E-06
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    0.            0.                  weight cutoff            0    0.            0.        
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
+ forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
+ exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
+ from neutrons            0    0.            0.                  compton scatter          0    0.            1.6539E-02
+ bremsstrahlung      134483    1.3448E-02    5.1681E-04          capture             341939    3.4194E-02    4.4386E-03
+ p-annihilation        1856    1.8560E-04    9.4843E-05          pair production        928    9.2800E-05    1.2141E-04
+ photonuclear             0    0.            0.                  photonuclear abs         0    0.            0.        
+ electron x-rays          0    0.            0.                  loss to photofis         0    0.            0.        
+ compton fluores          0    0.            0.                                                                        
+ muon capt fluores        0    0.            0.                                                                        
+ 1st fluorescence    106703    1.0670E-02    2.8364E-04                                                                
+ 2nd fluorescence      6717    6.7170E-04    2.6869E-06                                                                
+ cerenkov                 0    0.            0.                                                                        
+ (gamma,xgamma)           0    0.            0.                                                                        
+ tabular sampling         0    0.            0.                                                                        
+ prompt photofis          0    0.            0.                                                                        
+     total         10249759    1.0250E+00    1.2537E+00              total         10249759    1.0250E+00    1.2537E+00
+
+   number of photons banked                   143056        average time of (shakes)              cutoffs
+   photon tracks per source particle      1.0250E+00          escape            1.5981E-01          tco   1.0000E+33
+   photon collisions per source particle  7.5321E-02          capture           2.8913E-02          eco   1.0000E-03
+   total photon collisions                    753209          capture or escape 1.5544E-01          wc1  -5.0000E-01
+                                                              any termination   1.5543E-01          wc2  -2.5000E-01
+
+ computer time so far in this run     0.51 minutes            maximum number ever in bank         5
+ computer time in mcrun               0.48 minutes            bank overflows to backup file       0
+ source particles per minute            2.0746E+07
+ random numbers generated                 45355963            most random numbers used was         222 in history     8751023
+
+ range of sampled source weights = 1.0000E+00 to 1.0000E+00
+
+ number of histories processed by each thread
+     2262174     2574855     2618919     2544052
+1photon   activity in each cell                                                                         print table 126
+
+                       tracks     population   collisions   collisions     number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight   track mfp
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1      467039       610095       753209    7.5321E-02   1.0525E+00   1.0525E+00   1.0000E+00   4.5975E+00
+        2        2    10373931     10004386            0    0.0000E+00   1.2443E+00   1.2443E+00   1.0000E+00   0.0000E+00
+
+           total      10840970     10614481       753209    7.5321E-02
+
+1tally        1        nps =    10000000
+           tally type 1    number of particles crossing a surface.                             
+           particle(s): photons  
+ 
+ surface  3                                                                                                                            
+                 4.81186E-02 0.0014
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally        1
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.00      yes          yes            0.00      yes         yes            constant    random      10.00
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+
+ ===================================================================================================================================
+
+
+ this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
+ the results in other bins associated with this tally may not meet these statistical criteria.
+
+ ----- estimated confidence intervals:  -----
+
+ estimated asymmetric confidence interval(1,2,3 sigma): 4.8049E-02 to 4.8188E-02; 4.7979E-02 to 4.8258E-02; 4.7909E-02 to 4.8328E-02
+ estimated  symmetric confidence interval(1,2,3 sigma): 4.8049E-02 to 4.8188E-02; 4.7979E-02 to 4.8258E-02; 4.7909E-02 to 4.8328E-02
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally 1 with nps = 10000000            print table 160
+
+
+ normed average tally per history  = 4.81186E-02          unnormed average tally per history  = 4.81186E-02
+ estimated tally relative error    = 0.0014               estimated variance of the variance  = 0.0000
+ relative error from zero tallies  = 0.0014               relative error from nonzero scores  = 0.0002
+
+ number of nonzero history tallies =      467039          efficiency for the nonzero tallies  = 0.0467
+ history number of largest  tally  =      463092          largest  unnormalized history tally = 3.00000E+00
+ (largest  tally)/(average tally)  = 6.23460E+01          (largest  tally)/(avg nonzero tally)= 2.91180E+00
+
+ (confidence interval shift)/mean  = 0.0000               shifted confidence interval center  = 4.81187E-02
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            4.81186E-02             4.81189E-02                     0.000006
+      relative error                  1.44937E-03             1.44937E-03                     0.000003
+      variance of the variance        2.34630E-06             2.34653E-06                     0.000098
+      shifted center                  4.81187E-02             4.81187E-02                     0.000000
+      figure of merit                 9.87566E+05             9.87561E+05                    -0.000005
+
+ the estimated slope of the 201 largest  tallies starting at  1.81065E+00 appears to be decreasing at least exponentially.
+ the history score probability density function appears to have an unsampled region at the largest  history scores:
+ please examine. see print table 161.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.075E+07)*( 2.182E-01)**2 = (2.075E+07)*(4.760E-02) = 9.876E+05
+
+1status of the statistical checks used to form confidence intervals for the mean for each tally bin
+
+
+ tally   result of statistical checks for the tfc bin (the first check not passed is listed) and error magnitude check for all bins
+
+        1   passed the 10 statistical checks for the tally fluctuation chart bin result               
+         passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
+
+
+ the 10 statistical checks are only for the tally fluctuation chart bin and do not apply to other tally bins.
+
+1tally fluctuation charts                              
+
+                            tally        1
+          nps      mean     error   vov  slope    fom
+       512000   4.7992E-02 0.0064 0.0000  7.2  936221
+      1024000   4.7816E-02 0.0045 0.0000  5.8  971173
+      1536000   4.7958E-02 0.0037 0.0000  4.7  973016
+      2048000   4.7965E-02 0.0032 0.0000  4.5  972869
+      2560000   4.7946E-02 0.0029 0.0000  4.3  979802
+      3072000   4.8023E-02 0.0026 0.0000  4.3  987218
+      3584000   4.8072E-02 0.0024 0.0000  4.4  986364
+      4096000   4.8093E-02 0.0023 0.0000  4.6  976595
+      4608000   4.8153E-02 0.0021 0.0000  4.6  977386
+      5120000   4.8152E-02 0.0020 0.0000  4.9  976835
+      5632000   4.8143E-02 0.0019 0.0000  5.1  980316
+      6144000   4.8096E-02 0.0018 0.0000  5.3  979284
+      6656000   4.8116E-02 0.0018 0.0000  5.3  979400
+      7168000   4.8109E-02 0.0017 0.0000  5.8  981420
+      7680000   4.8116E-02 0.0017 0.0000  5.8  983909
+      8192000   4.8115E-02 0.0016 0.0000  7.0  985885
+      8704000   4.8106E-02 0.0016 0.0000  7.0  987355
+      9216000   4.8101E-02 0.0015 0.0000  8.5  986618
+      9728000   4.8125E-02 0.0015 0.0000 10.0  988567
+     10000000   4.8119E-02 0.0014 0.0000 10.0  987566
+
+ ***********************************************************************************************************************
+
+ dump no.    2 on file geomeff2r     nps =    10000000     coll =         753209     ctm =        0.48   nrn =         
+ 45355963
+
+          1 warning message so far.
+
+
+ run terminated when    10000000  particle histories were done.
+
+ computer time =    0.51 minutes
+
+ mcnp     version 6     02/20/18                     09/23/21 22:34:04                     probid =  09/23/21 22:33:56 
