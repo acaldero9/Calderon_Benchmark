@@ -1,12 +1,13 @@
 Volume Calculation
 c CELL CARD
-7 0 -3 -94 97 imp:n=1
-9 0 (3:94:-97)
+7 0 -3 -97 112 imp:n=1
+9 0 (3:97:-112) imp:n=0
 
 c SURFACE CARD
 3 cz 0.45720 $ outer radius of clad
 94 pz 187.164
 97 pz 172.508
+112 pz -193.252
 117 px -0.61015 $ water dimensions for fuel with grid top/bottom
 118 px 0.61015 $ water dimensions for fuel with grid top/bottom
 119 py -0.61015 $ water dimensions for fuel with grid top/bottom
