@@ -1,0 +1,20 @@
+Geometric Efficiency Ba133
+c cell
+ 1 1 -3.67 -1 -2 3 imp:p=1 $detector
+ 2 0 (1:2:-3) -4 imp:p=1 $void
+99 0 4 imp:p=0 $ext
+
+c surfaces
+1 cz 4 $detector
+2 pz 4 $upper bound
+3 pz -4 $lower bound
+4 so 50 $air
+
+c data
+m1 11000.84p 0.5 53000.84p 0.5 $NaI
+sdef par=p pos=0 0 6.9 erg= d1
+si1 L 0.031 0.062 0.081 0.303
+sp1 D 0.990 0.060 0.034 0.018
+F1:p 2 $detector surface
+mode p
+nps 1000000
