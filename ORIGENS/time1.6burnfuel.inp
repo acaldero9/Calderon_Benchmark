@@ -1,0 +1,52 @@
+=origen
+% 1.6% Enriched Fuel Assembly 
+
+% Burnup of Fuel Material
+bounds{ neutron=[ 20L 2.0E7 1.0E-9] }
+solver{
+    type=CRAM
+    opt{
+        order=16
+        substeps=8
+    }
+}
+
+options{
+    print_xs=yes
+    digits=6
+}
+
+case{
+    title="Fuel Burnup With Modified Time Steps"
+    lib{ file="end7dec" pos=1 }
+    time{
+        units=DAYS
+        t=[ 1 50 150 325 575]
+    }
+    power=[ 54.514602 224.6149299 955.1497891 2472.668262 2646.340255 ]
+    mat{
+        % 1.6% Enriched Fuel
+        units=ATOMS-PER-BARN-CM
+        iso=[
+            o16=4.5897E-02
+            o17=1.7436E-05
+            o18=9.2031E-05
+            u234=3.0131E-06
+            u235=3.7503E-04
+            u238=2.2625E-02
+            ]
+        volume=46657.512
+    } % end mat
+    print{
+        neutron{
+            spectra=yes
+        } % end neutron
+    } % end print
+    neutron=yes
+    save{
+        file="timefuelburnup.f71"
+        steps=ALL
+    } % end save
+} % end case A
+
+end
