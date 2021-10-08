@@ -1,17 +1,81 @@
 Volume Calculation
 c CELL CARD
-7 0 -3 -97 112 imp:n=1
-16 14 -0.740582067516 3 117 -118 119 -120 -97 112 imp:n=1 $ b Water
-9 0 (-117:118:-119:120:97:-112)
+c 7 0 -16 -125 113 imp:n=1
+111 14 -0.740582067516 117 -118 119 -120 -125 113 imp:n=1 $ b water
+9 0 (-117:118:-119:120:125:-113)
 
 c SURFACE CARD
+1 cz 0.39218 $ fuel radius
+2 cz 0.40005 $ inner radius of clad
 3 cz 0.45720 $ outer radius of clad
-112 pz -193.252
+c FIG.6 instrument pin dimensions
+11 cz 0.43688 $ air gap
+12 cz 0.48387 $ zircaloy
+13 cz 0.56134 $ water gap
+14 cz 0.60198 $ zircaloy
+c Empty guide tube geometry at dashpot
+15 cz 0.50419 $ water
+16 cz 0.54610 $ zircaloy
+c Axial Fuel Rod Dimensions
+90 pz 230.000
+91 pz 201.876
+92 pz 193.049
+93 pz 189.704
+94 pz 187.164
+95 pz 185.164
+96 pz 181.806
 97 pz 172.508
+98 pz 134.725
+99 pz 129.010
+100 pz 82.528
+101 pz 76.813
+102 pz 30.331
+103 pz 24.616
+104 pz -21.866
+105 pz -27.581
+106 pz -74.063
+107 pz -79.778
+108 pz -126.260
+109 pz -131.975
+110 pz -189.48
+125 pz -190.042
+111 pz -192.8379
+112 pz -193.252
+113 pz -195.000
+114 pz -210.000
+115 pz -230.000
+c ----------------------------------------------------------------------------
 117 px -0.61015 $ water dimensions for fuel with grid top/bottom
 118 px 0.61015 $ water dimensions for fuel with grid top/bottom
 119 py -0.61015 $ water dimensions for fuel with grid top/bottom
 120 py 0.61015 $ water dimensions for fuel with grid top/bottom
+121 px -0.61049 $ water dimensions for fuel with grid intermediate
+122 px 0.61049 $ water dimensions for fuel with grid intermediate
+123 py -0.61049 $ water dimensions for fuel with grid intermediate
+124 py 0.61049 $ water dimensions for fuel with grid intermediate
+c Basic fuel pin lattice cell
+5 px  0.62992 $ 1st side of square lattice
+6 px -0.62992 $ 2nd side of square lattice
+7 py  0.62992 $ 3rd side of square lattice
+8 py -0.62992 $ 4th side of square lattice
+c Basic square assembly
+35 px 10.70864 $ 1st side of square assembly
+36 px -10.70864 $ 2nd side of square assembly
+37 py 10.70864 $ 3rd side of square assembly
+38 py -10.70864 $ 4th side of square assembly
+c 135 px 11
+c 136 px -11
+c 137 py 11
+c 138 py -11
+c core dimensions
+10 pz 231.0
+20 pz -231.0
+c 88 pz 232.0
+c 89 so 350
+805 px 0.7
+806 px -0.7
+807 py 0.7
+808 py -0.7
 
 c DATA CARD
 c Borated Water
