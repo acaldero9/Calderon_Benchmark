@@ -2,28 +2,28 @@ Howitzer- Calderon
 c ============================================================================
 c CELL CARDS
 c center cylinder
-1 1 -0.97 -7 -2 3 imp:n=1 $ center cyl top part
-2 1 -0.97 -7 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-3 2 -0.001225 -7 -4 5 imp:n=1 $ center cyl hollow capsule 
-4 1 -0.97 -7 -5 6 imp:n=1 $ center cyl hdpe plug
+1 1 -0.97 -7 -2 3 imp:n,p=1 $ center cyl top part
+2 1 -0.97 -7 -3 4 imp:n,p=1 $ center cyl bottom part but above hollow
+3 2 -0.001225 -7 -4 5 imp:n,p=1 $ center cyl hollow capsule 
+4 1 -0.97 -7 -5 6 imp:n,p=1 $ center cyl hdpe plug
 c top center cylinder
-5 1 -0.97 -8 -2 3 imp:n=1 $ center cyl top part
-6 1 -0.97 -8 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-7 2 -0.001225 -8 -4 5 imp:n=1 $ center cyl hollow capsule 
-8 1 -0.97 -8 -5 6 imp:n=1 $ center cyl hdpe plug
+5 1 -0.97 -8 -2 3 imp:n,p=1 $ center cyl top part
+6 1 -0.97 -8 -3 4 imp:n,p=1 $ center cyl bottom part but above hollow
+7 0 -8 -4 5 imp:n,p=1 $ center cyl hollow capsule 
+8 1 -0.97 -8 -5 6 imp:n,p=1 $ center cyl hdpe plug
 c left cylinder
-9 1 -0.97 -9 -2 3 imp:n=1 $ center cyl top part
-10 1 -0.97 -9 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-11 2 -0.001225 -9 -4 5 imp:n=1 $ center cyl hollow capsule 
-12 1 -0.97 -9 -5 6 imp:n=1 $ center cyl hdpe plug
+9 1 -0.97 -9 -2 3 imp:n,p=1 $ center cyl top part
+10 1 -0.97 -9 -3 4 imp:n,p=1 $ center cyl bottom part but above hollow
+11 2 -0.001225 -9 -4 5 imp:n,p=1 $ center cyl hollow capsule 
+12 1 -0.97 -9 -5 6 imp:n,p=1 $ center cyl hdpe plug
 c right cylinder
-13 1 -0.97 -10 -2 3 imp:n=1 $ center cyl top part
-14 1 -0.97 -10 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-15 2 -0.001225 -10 -4 5 imp:n=1 $ center cyl hollow capsule 
-16 1 -0.97 -10 -5 6 imp:n=1 $ center cyl hdpe plug
+13 1 -0.97 -10 -2 3 imp:n,p=1 $ center cyl top part
+14 1 -0.97 -10 -3 4 imp:n,p=1 $ center cyl bottom part but above hollow
+15 2 -0.001225 -10 -4 5 imp:n,p=1 $ center cyl hollow capsule 
+16 1 -0.97 -10 -5 6 imp:n,p=1 $ center cyl hdpe plug
 c
-17 1 -0.97 (7:2:-6) (8:2:-6) (9:2:-6) (10:2:-6) (-1 -2 6) imp:n=1
-99 0 (1:2:-6) imp:n=0
+17 1 -0.97 (7:2:-6) (8:2:-6) (9:2:-6) (10:2:-6) (-1 -2 6) imp:n,p=1
+99 0 (1:2:-6) imp:n,p=0
 c ============================================================================
 
 c ============================================================================
@@ -43,12 +43,14 @@ c ============================================================================
 
 c ============================================================================
 c DATA CARDS
+mode n p
+nps 10000
 tr1 0 5.08 0 1 0 0 0 1 0 0 0 1
 *tr2 0 -5.08 0 120 30 90 210 120 90 90 90 0 -1
 *tr3 0 -5.08 0 -120 -210 90 -30 -120 90 90 90 0 -1
-sdef erg d3 pos 0 0 0 ext d1 rad d2 axs 0 0 1 par 1
+sdef erg d3 pos 0 5.08 -21.9075 ext d1 rad d2 axs 0 0 1 par 1
 c d1 is the height extension of the cylindrical source
-si1 0 5
+si1 0 4.445
 sp1 -21 0
 c d2 is the radial extension of the cylindrical source
 si2 0 1.2
