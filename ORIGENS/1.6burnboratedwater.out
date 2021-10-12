@@ -18,8 +18,8 @@
       
                   Job Information
                   ---------------
-      Job started on DESKTOP-7Q71D4I on Fri 08/10/2021 11:49:53
-      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.12584
+      Job started on DESKTOP-7Q71D4I on Mon 11/10/2021 21:25:18
+      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.2712
       Input file name  : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\1.6burnboratedwater.inp
       Output file name : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\1.6burnboratedwater.out
       SCALE executable : C:\SCALE-6.2.4/bin/scale
@@ -27,7 +27,7 @@
  *******************************************************************************
 
 
-    module origen will be called on Fri Oct 08 11:49:54 2021.
+    module origen will be called on Mon Oct 11 21:25:19 2021.
     sequence specification record:=origen
 Input Data:
 
@@ -50,7 +50,7 @@ Input Data:
       
       case{
           title="Borated Water Burnup"
-          lib{ file="end7dec" pos=1 }
+          lib{ file="jeff238g" pos=1 }
           time{
               units=DAYS
               t=[ 0
@@ -1170,92 +1170,28 @@ end
         *****                                                                                                              *****
         *****         machine name:  DESKTOP-7Q71D4I                                                                       *****
         *****                                                                                                              *****
-        *****    date of execution:  08_oct_2021                                                                           *****
+        *****    date of execution:  11_oct_2021                                                                           *****
         *****                                                                                                              *****
-        *****    time of execution:  11:49:54.08                                                                           *****
+        *****    time of execution:  21:25:19.25                                                                           *****
         *****                                                                                                              *****
         *****                                                                                                              *****
         ************************************************************************************************************************
         ************************************************************************************************************************
         ************************************************************************************************************************
 
-*************************************************************************************************************************
-********************                                                                                 ********************
-********************                                                                                 ********************
-********************                    USER INPUT SUMMARY                                           ********************
-********************                                                                                 ********************
-********************                                                                                 ********************
-*************************************************************************************************************************
-.
-.
-=========================================================================================================================
-=   Case "1" (#1/1)                                                                                                     =
-=   Borated Water Burnup                                                                                                =
--------------------------------------------------------------------------------------------------------------------------
-###   Library settings                                                                                                ###
-.
-                                Library file name:     C:/SCALE-6.2.4/data/origen.rev04.end7dec
-                             Library set position:              1
-                 Fission product reaction removal:             no
--------------------------------------------------------------------------------------------------------------------------
-###   Global settings                                                                                                 ###
-.
-                                           Solver:           CRAM
-                                             Mode:        forward
-                             Fixed fission energy:             no
--------------------------------------------------------------------------------------------------------------------------
-###   Concentrations output options                                                                                   ###
-.
-                            High-precision output:            yes
-                                  Relative cutoff:            yes
-                         Step for applying cutoff:       integral
-.
-                      light els.   actinides  fis.prods.       total
-                       nuc    el   nuc    el   nuc    el   nuc    el             cutoff
-gram-atoms                                                                    1.000E-06
-grams                                                                         1.000E-06
-curies                                                                        1.000E-06
-watts                                                                         1.000E-06
-gamma watts                                                                   1.000E-06
-m3 air                                                                        1.000E-06
-m3 water                                                                      1.000E-06
-grams ppm                                                                     1.000E-06
-atoms ppm                                                                     1.000E-06
-atoms/barn-cm                                                                 1.000E-06
-becquerels                                                                    1.000E-06
--------------------------------------------------------------------------------------------------------------------------
-###   Additional output options                                                                                       ###
-.
-                                      Print k-inf:             no
-           Nuclides for absorption fraction print:           none
-                              Print fission rates:             no
-            Step for sorting absorption fractions:            527
--------------------------------------------------------------------------------------------------------------------------
-###   Neutron calculation                                                                                             ###
-.
-                          Number of energy groups:             21
-                            Print neutron sources:            yes
-                            Print neutron spectra:            yes
-                        Print neutron source info:             no
-                             Number of (a,n) bins:            200
-                    Medium for (a,n) calculations:       case-specific
-                                 Cutoff for (a,n):       0.00E+00
-          Step for the case-specific (a,n) matrix:            527
-=========================================================================================================================
-###   Blending information                                                                                            ###
-.
-  --- no blending requested in this job ---
-=========================================================================================================================
-.
-.
-    module origen used 0.118633 seconds cpu time for the current pass.
+***Error: could not read library ft33='C:/SCALE-6.2.4/data/origen.rev03.jeff238g'
+***Error: Expected appName='ORIGEN_F33', found appName='AmpxMGBOFF'
+***Error: Expected appName='ORIGENBL  ', found appName='AmpxMGBOFF' with format='bof'
+***Error: Error reading int from Record=definition at offset -1. with format='s62b'
+***Error: Error reading int from Record=definition at offset -1. with format='s61'
+***Error: tried to load formats: (bof|s62b|s61) and failed
+***Error: Error opening cross section library=C:/SCALE-6.2.4/data/origen.rev03.jeff238g for reading
+    execution terminated due to errors. completion code 2. cpu time used 0.084213 seconds
 
-    module origen is finished. completion code    0. total cpu time used 5.8e-006 seconds.
-
-
-    SCALE is finished on Fri Oct 08 11:49:54 2021.
+    SCALE is finished on Mon Oct 11 21:25:19 2021.
 -------------------------- Summary --------------------------
-origen finished. used 0.126211 seconds.
-SCALE driver required a maximum of 8.938 MiB of RAM.
+    terminated due to errors. completion code 2. used 0.084213 seconds
+origen finished. used 0.091511 seconds.
+SCALE driver required a maximum of 8.91 MiB of RAM.
 ------------------------ End Summary ------------------------
 

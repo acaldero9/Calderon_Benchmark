@@ -18,7 +18,7 @@ options{
 
 case{
     title="Borated Water Burnup"
-    lib{ file="end7dec" pos=1 }
+    lib{ file="jeff238g" pos=1 }
     time{
         units=DAYS
         t=[ 0
