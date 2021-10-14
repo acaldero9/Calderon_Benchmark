@@ -72,7 +72,6 @@ tr1 0 5.08 0 1 0 0 0 1 0 0 0 1
 *tr3 0 -5.08 0 -120 -210 90 -30 -120 90 90 90 0 -1
 *tr4 0 0 0 -120 -210 90 -30 -120 90 90 90 0 -1
 *tr5 0 0 0 120 30 90 210 120 90 90 90 0 -1
-c *tr4
 sdef erg d3 pos 0 0 -21.9075 ext d1 rad d2 axs 0 0 1 par 1
 c d1 is the height extension of the cylindrical source
 si1 0 4.445
