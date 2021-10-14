@@ -18,8 +18,8 @@
       
                   Job Information
                   ---------------
-      Job started on DESKTOP-7Q71D4I on Mon 11/10/2021 21:25:18
-      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.2712
+      Job started on DESKTOP-7Q71D4I on Mon 11/10/2021 22:35:51
+      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.7624
       Input file name  : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\1.6burnboratedwater.inp
       Output file name : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\1.6burnboratedwater.out
       SCALE executable : C:\SCALE-6.2.4/bin/scale
@@ -27,7 +27,7 @@
  *******************************************************************************
 
 
-    module origen will be called on Mon Oct 11 21:25:19 2021.
+    module origen will be called on Mon Oct 11 22:35:52 2021.
     sequence specification record:=origen
 Input Data:
 
@@ -50,7 +50,7 @@ Input Data:
       
       case{
           title="Borated Water Burnup"
-          lib{ file="jeff238g" pos=1 }
+          lib{ file="ce_v7.1_endf" pos=1 }
           time{
               units=DAYS
               t=[ 0
@@ -1118,7 +1118,7 @@ Input Data:
                   h2 = 7.7035e-06
                   o16 =  2.4673e-02
                   o17 = 9.3734e-06
-                  o18 = 4.9474e-05
+                  %o18 = 4.9474e-05
                   ]
               volume=169141.0163
           } % end mat
@@ -1172,26 +1172,25 @@ end
         *****                                                                                                              *****
         *****    date of execution:  11_oct_2021                                                                           *****
         *****                                                                                                              *****
-        *****    time of execution:  21:25:19.25                                                                           *****
+        *****    time of execution:  22:35:52.32                                                                           *****
         *****                                                                                                              *****
         *****                                                                                                              *****
         ************************************************************************************************************************
         ************************************************************************************************************************
         ************************************************************************************************************************
 
-***Error: could not read library ft33='C:/SCALE-6.2.4/data/origen.rev03.jeff238g'
-***Error: Expected appName='ORIGEN_F33', found appName='AmpxMGBOFF'
-***Error: Expected appName='ORIGENBL  ', found appName='AmpxMGBOFF' with format='bof'
+***Error: could not read library ft33='C:\SCALE-6.2.4\data\ce_v7.1_endf'
+***Error: ***Error: Attempting to read BOF header endianess!: iostream stream error with format='bof'
 ***Error: Error reading int from Record=definition at offset -1. with format='s62b'
 ***Error: Error reading int from Record=definition at offset -1. with format='s61'
 ***Error: tried to load formats: (bof|s62b|s61) and failed
-***Error: Error opening cross section library=C:/SCALE-6.2.4/data/origen.rev03.jeff238g for reading
-    execution terminated due to errors. completion code 2. cpu time used 0.084213 seconds
+***Error: Error opening cross section library=C:\SCALE-6.2.4\data\ce_v7.1_endf for reading
+    execution terminated due to errors. completion code 2. cpu time used 0.0809849 seconds
 
-    SCALE is finished on Mon Oct 11 21:25:19 2021.
+    SCALE is finished on Mon Oct 11 22:35:52 2021.
 -------------------------- Summary --------------------------
-    terminated due to errors. completion code 2. used 0.084213 seconds
-origen finished. used 0.091511 seconds.
-SCALE driver required a maximum of 8.91 MiB of RAM.
+    terminated due to errors. completion code 2. used 0.0809849 seconds
+origen finished. used 0.0882558 seconds.
+SCALE driver required a maximum of 8.914 MiB of RAM.
 ------------------------ End Summary ------------------------
 

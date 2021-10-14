@@ -2,7 +2,7 @@
 % 1.6% Enriched Fuel Assembly 
 
 % Burnup of Zircaloy-4 Material
-bounds{ neutron=[ 20L 2.0E7 1.0E-9] }
+bounds{ neutron="xn27g19v7.0" gamma="xn27g19v7.0"}
 solver{
     type=CRAM
     opt{
@@ -18,7 +18,7 @@ options{
 
 case{
     title="Zircaloy Burnup"
-    lib{ file="ensdf95beta.data" pos=1 }
+    lib{ file="jeff238g" pos=1 }
     time{
         units=DAYS
         t=[ 0

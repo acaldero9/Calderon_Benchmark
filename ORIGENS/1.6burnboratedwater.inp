@@ -18,7 +18,7 @@ options{
 
 case{
     title="Borated Water Burnup"
-    lib{ file="jeff238g" pos=1 }
+    lib{ file="ce_v7.1_endf" pos=1 }
     time{
         units=DAYS
         t=[ 0
@@ -1086,7 +1086,7 @@ case{
             h2 = 7.7035e-06
             o16 =  2.4673e-02
             o17 = 9.3734e-06
-            o18 = 4.9474e-05
+            %o18 = 4.9474e-05
             ]
         volume=169141.0163
     } % end mat

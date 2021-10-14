@@ -18,8 +18,8 @@
       
                   Job Information
                   ---------------
-      Job started on DESKTOP-7Q71D4I on Fri 08/10/2021 11:18:20
-      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.6292
+      Job started on DESKTOP-7Q71D4I on Wed 13/10/2021 11:09:35
+      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.11784
       Input file name  : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\1.6burnzircaloy.inp
       Output file name : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\1.6burnzircaloy.out
       SCALE executable : C:\SCALE-6.2.4/bin/scale
@@ -27,14 +27,14 @@
  *******************************************************************************
 
 
-    module origen will be called on Fri Oct 08 11:18:21 2021.
+    module origen will be called on Wed Oct 13 11:09:36 2021.
     sequence specification record:=origen
 Input Data:
 
       % 1.6% Enriched Fuel Assembly 
       
       % Burnup of Zircaloy-4 Material
-      bounds{ neutron=[ 20L 2.0E7 1.0E-9] }
+      bounds{ neutron="xn27g19v7.0" gamma="xn27g19v7.0"}
       solver{
           type=CRAM
           opt{
@@ -50,7 +50,7 @@ Input Data:
       
       case{
           title="Zircaloy Burnup"
-          lib{ file="ensdf95beta.data" pos=1 }
+          lib{ file="jeff238g" pos=1 }
           time{
               units=DAYS
               t=[ 0
@@ -1147,7 +1147,7 @@ Input Data:
               } % end neutron
       cutoffs = [ ATOMS-PER-BARN-CM=1e-9 ]
           } % end print
-          % neutron=yes
+          neutron=yes
           save{
               file="zircaloyburnup.f71"
               steps=ALL
@@ -1190,27 +1190,28 @@ end
         *****                                                                                                              *****
         *****         machine name:  DESKTOP-7Q71D4I                                                                       *****
         *****                                                                                                              *****
-        *****    date of execution:  08_oct_2021                                                                           *****
+        *****    date of execution:  13_oct_2021                                                                           *****
         *****                                                                                                              *****
-        *****    time of execution:  11:18:21.17                                                                           *****
+        *****    time of execution:  11:09:36.42                                                                           *****
         *****                                                                                                              *****
         *****                                                                                                              *****
         ************************************************************************************************************************
         ************************************************************************************************************************
         ************************************************************************************************************************
 
-***Error: could not read library ft33='ensdf95beta.data'
-***Error: file='ensdf95beta.data' does not exist with format='bof'
-***Error: file='ensdf95beta.data' does not exist with format='s62b'
-***Error: file='ensdf95beta.data' does not exist with format='s61'
+***Error: could not read library ft33='C:/SCALE-6.2.4/data/origen.rev03.jeff238g'
+***Error: Expected appName='ORIGEN_F33', found appName='AmpxMGBOFF'
+***Error: Expected appName='ORIGENBL  ', found appName='AmpxMGBOFF' with format='bof'
+***Error: Error reading int from Record=definition at offset -1. with format='s62b'
+***Error: Error reading int from Record=definition at offset -1. with format='s61'
 ***Error: tried to load formats: (bof|s62b|s61) and failed
-***Error: Error opening cross section library=ensdf95beta.data for reading
-    execution terminated due to errors. completion code 2. cpu time used 0.0748936 seconds
+***Error: Error opening cross section library=C:/SCALE-6.2.4/data/origen.rev03.jeff238g for reading
+    execution terminated due to errors. completion code 2. cpu time used 0.0724705 seconds
 
-    SCALE is finished on Fri Oct 08 11:18:21 2021.
+    SCALE is finished on Wed Oct 13 11:09:36 2021.
 -------------------------- Summary --------------------------
-    terminated due to errors. completion code 2. used 0.0748936 seconds
-origen finished. used 0.0823269 seconds.
-SCALE driver required a maximum of 8.93 MiB of RAM.
+    terminated due to errors. completion code 2. used 0.0724705 seconds
+origen finished. used 0.0795396 seconds.
+SCALE driver required a maximum of 8.957 MiB of RAM.
 ------------------------ End Summary ------------------------
 
