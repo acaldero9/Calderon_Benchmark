@@ -4,23 +4,23 @@ c CELL CARDS
 c center cylinder
 1 1 -0.97 -7 -2 3 imp:n=1 $ center cyl top part
 2 1 -0.97 -7 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-3 0 -7 -4 5 imp:n=1 $ center cyl hollow capsule 
+3 0 -7 -4 5 imp:n=1 $ center cyl hollow capsule
 4 1 -0.97 -7 -5 6 imp:n=1 $ center cyl hdpe plug
 c top center cylinder
 5 1 -0.97 -8 -2 3 imp:n=1 $ center cyl top part
 6 1 -0.97 -8 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-7 2 -0.001225 -8 -4 5 (14:-15:16) (20:-15:16) 
-     imp:n=1 $ center cyl hollow capsule 
+7 2 -0.001225 -8 -4 5 (14:-15:16) (20:-15:16)
+     imp:n=1 $ center cyl hollow capsule
 8 1 -0.97 -8 -5 6 imp:n=1 $ center cyl hdpe plug
 c left cylinder
 9 1 -0.97 -9 -2 3 imp:n=1 $ center cyl top part
 10 1 -0.97 -9 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-11 2 -0.001225 -9 -4 5 (11:-12:13) imp:n=1 $ center cyl hollow capsule 
+11 2 -0.001225 -9 -4 5 (11:-12:13) imp:n=1 $ center cyl hollow capsule
 12 1 -0.97 -9 -5 6 imp:n=1 $ center cyl hdpe plug
 c right cylinder
 13 1 -0.97 -10 -2 3 imp:n=1 $ center cyl top part
 14 1 -0.97 -10 -3 4 imp:n=1 $ center cyl bottom part but above hollow
-15 2 -0.001225 -10 -4 5 (17:-18:19) imp:n=1 $ center cyl hollow capsule 
+15 2 -0.001225 -10 -4 5 (17:-18:19) imp:n=1 $ center cyl hollow capsule
 16 1 -0.97 -10 -5 6 imp:n=1 $ center cyl hdpe plug
 c FOILS
 17 3 -8.92 -14 15 -16 imp:n=1 $ Cu foil
@@ -35,7 +35,7 @@ c ============================================================================
 c ============================================================================
 c SURFACE CARDS
 1 cz 19.685 $ hdpe cylinder radius 7.75in
-2 pz 26.3525 $ upper bound of hdpe cylinder 
+2 pz 26.3525 $ upper bound of hdpe cylinder
 3 pz -14.2875 $ lower bound of "upper" piece
 4 pz -17.4625 $ upper bound for hollow capsule for source
 5 pz -21.9075 $ upper bound of solid hdpe "plug"
@@ -53,7 +53,7 @@ c Copper: r = 0.633106342cm
 14 c/y 0 -19.00189366 0.633106342
 15 py 5.07746 $ left bound of foil cylinder
 16 py 5.08254 $ right bound of foil cylinder
-c Gold: r = 0.6671650393cm 
+c Gold: r = 0.6671650393cm
 17 4 c/y 0 -19.685 0.6671650393
 18 4 py 5.07746 $ left bound of foil cylinder
 19 4 py 5.08254 $ right bound of foil cylinder
@@ -66,13 +66,13 @@ c ============================================================================
 c ============================================================================
 c DATA CARDS
 mode n
-nps 1000000
+nps 10000000
 tr1 0 5.08 0 1 0 0 0 1 0 0 0 1
 *tr2 0 -5.08 0 120 30 90 210 120 90 90 90 0 -1
 *tr3 0 -5.08 0 -120 -210 90 -30 -120 90 90 90 0 -1
 *tr4 0 0 0 -120 -210 90 -30 -120 90 90 90 0 -1
 *tr5 0 0 0 120 30 90 210 120 90 90 90 0 -1
-c *tr4 
+c *tr4
 sdef erg d3 pos 0 0 -21.9075 ext d1 rad d2 axs 0 0 1 par 1
 c d1 is the height extension of the cylindrical source
 si1 0 4.445
@@ -81,17 +81,17 @@ c d2 is the radial extension of the cylindrical source
 si2 0 1.2
 sp2 -21 1
 c d3 is energy distribution
-si3  0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 2.25 2.5 2.75 3 3.25 3.5 3.75 
-     4 4.25 4.5 4.75 5 5.25 5.5 5.75 6 6.25 6.5 6.75 7 7.25 7.5 7.75 
-     8 8.25 8.5 8.75 9 9.25 9.5 9.75 10 10.25 10.5 10.75 11 11.25 11.5 
-     11.75 12 
-sp3 d 0 2.39E-4 4.95E-3 1.29E-2 1.69E-2 1.73E-2 1.54E-2 1.17E-2 
-        1.59E-2 1.93E-2 2.15E-2 2.62E-2 3.84E-2 4.96E-2 5.22E-2 5.01E-2 
-        4.72E-2 4.49E-2 4.32E-2 4.13E-2 3.89E-2 3.35E-2 2.76E-2 2.49E-2 
-        2.40E-2 2.09E-2 2.12E-2 2.39E-2 2.50E-2 2.50E-2 2.49E-2 2.43E-2 
-        2.30E-2 2.11E-2 1.94E-2 1.82E-2 1.75E-2 1.67E-2 1.47E-2 1.13E-2 
-        7.08E-3 3.98E-3 2.57E-3 1.34E-3 4.27E-4 5.93E-6 1.23E-8 9.78E-9 
-        7.74E-9 
+si3  0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 2.25 2.5 2.75 3 3.25 3.5 3.75
+     4 4.25 4.5 4.75 5 5.25 5.5 5.75 6 6.25 6.5 6.75 7 7.25 7.5 7.75
+     8 8.25 8.5 8.75 9 9.25 9.5 9.75 10 10.25 10.5 10.75 11 11.25 11.5
+     11.75 12
+sp3 d 0 2.39E-4 4.95E-3 1.29E-2 1.69E-2 1.73E-2 1.54E-2 1.17E-2
+        1.59E-2 1.93E-2 2.15E-2 2.62E-2 3.84E-2 4.96E-2 5.22E-2 5.01E-2
+        4.72E-2 4.49E-2 4.32E-2 4.13E-2 3.89E-2 3.35E-2 2.76E-2 2.49E-2
+        2.40E-2 2.09E-2 2.12E-2 2.39E-2 2.50E-2 2.50E-2 2.49E-2 2.43E-2
+        2.30E-2 2.11E-2 1.94E-2 1.82E-2 1.75E-2 1.67E-2 1.47E-2 1.13E-2
+        7.08E-3 3.98E-3 2.57E-3 1.34E-3 4.27E-4 5.93E-6 1.23E-8 9.78E-9
+        7.74E-9
 c Materials
 c HDPE 0.97 g/cm^3
 m1     1001    0.667
