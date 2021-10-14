@@ -1,0 +1,73 @@
+ *******************************************************************************
+ *                                                                             *
+ *                                 SCALE 6.2.4                                 *
+ *                                -------------                                *
+ *                                October 2021                                 *
+ *                                                                             *
+ *           SCALE:  A Comprehensive Modeling and Simulation Suite             *
+ *                   for Nuclear Safety Analysis and Design                    *
+ *                                                                             *
+ *                      Reactor and Nuclear Systems Division                   *
+ *                        Oak Ridge National Laboratory                        *
+ *                                                                             *
+ *                           http://scale.ornl.gov                             *
+ *                            scalehelp@ornl.gov                               *
+ *                                                                             *
+ *******************************************************************************
+ *******************************************************************************
+      
+                  Job Information
+                  ---------------
+      Job started on DESKTOP-7Q71D4I on Wed 13/10/2021 11:55:07
+      Working directory: C:\Users\Adrian\AppData\Local\Temp\scale.Adrian.8344
+      Input file name  : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\examplecouple.inp
+      Output file name : C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\examplecouple.out
+      SCALE executable : C:\SCALE-6.2.4/bin/scale
+      
+ *******************************************************************************
+
+
+    module couple will be called on Wed Oct 13 11:55:07 2021.
+    sequence specification record:=couple 
+Input Data:
+
+      Cross Section Library Generation Example
+      
+      0$$ a3 80 a4 21 a6 33 e
+      1$ a18 238 e t
+      9*
+        {flux.txt} e t
+      done
+end
+
+
+     0$ array     99 entries read
+
+     0t
+    module couple used 0.0907249 seconds cpu time for the current pass.
+
+    module couple is finished. completion code    0. total cpu time used 5.5e-006 seconds.
+
+The following data cards precede an = card
+      ' save a copy of origen library
+
+
+    module shell will be called on Wed Oct 13 11:55:07 2021.
+    sequence specification record:=shell
+Input Data:
+
+      cp ft33f001 "${OUTDIR}/pwr_inf.f33"
+end 
+
+The system cannot find the file specified.
+module shell is finished. completion code 1
+error:  Sequence: shell failed to execute - see messages file for details. 
+WARNING:  Sequence shell did not run correctly.ERROR: System call through shell was not successful (user provided: 'cp ft33f001 "${OUTDIR}/pwr_inf.f33"' translated to 'copy /Y ft33f001 "C:\MY_MCNP\MCNPCODESpc\Calderon_Benchmark\ORIGENS\pwr_inf.f33"')
+
+    SCALE is finished on Wed Oct 13 11:55:07 2021.
+-------------------------- Summary --------------------------
+couple finished. used 0.0913555 seconds.
+shell failed. used 0.0091949 seconds.
+SCALE driver required a maximum of 9.418 MiB of RAM.
+------------------------ End Summary ------------------------
+

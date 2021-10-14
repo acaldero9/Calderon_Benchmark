@@ -1,0 +1,14 @@
+=couple 
+Cross Section Library Generation Example
+
+0$$ a3 80 a4 21 a6 33 e
+1$ a18 238 e t
+9**
+  {flux.txt} e t
+done
+end
+
+' save a copy of origen library
+=shell
+cp ft33f001 "${OUTDIR}/pwr_inf.f33"
+end 
