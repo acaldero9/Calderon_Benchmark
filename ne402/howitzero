@@ -1,0 +1,563 @@
+          Code Name & Version = MCNP_6.20, 6.2.0
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  +-----------------------------------------------------------------------+
+  | Copyright (2018).  Los Alamos National Security, LLC.  All rights     !
+  | reserved.                                                             !
+  |  This material was produced under U.S. Government contract            !
+  | DE-AC52-06NA25396 for Los Alamos National Laboratory, which is        !
+  | operated by Los Alamos National Security, LLC for the U.S.            !
+  | Department of Energy. The Government is granted for itself and        !
+  | others acting on its behalf a paid-up, nonexclusive, irrevocable      !
+  | worldwide license in this material to reproduce, prepare derivative   !
+  | works, and perform publicly and display publicly. Beginning five (5)  !
+  | years after February 14, 2018, subject to additional five-year        !
+  | worldwide renewals, the Government is granted for itself and others   !
+  | acting on its behalf a paid-up, nonexclusive, irrevocable worldwide   !
+  | license in this material to reproduce, prepare derivative works,      !
+  | distribute copies to the public, perform publicly and display         !
+  | publicly, and to permit others to do so. NEITHER THE UNITED STATES    !
+  | NOR THE UNITED STATES DEPARTMENT OF ENERGY, NOR LOS ALAMOS NATIONAL   !
+  | SECURITY, LLC, NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY,        !
+  | EXPRESS OR IMPLIED, OR ASSUMES ANY LEGAL LIABILITY OR RESPONSIBILITY  !
+  | FOR THE ACCURACY, COMPLETENESS, OR USEFULNESS OF ANY INFORMATION,     !
+  | APPARATUS, PRODUCT, OR PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE  !
+  | WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS.                            !
+  +-----------------------------------------------------------------------+
+  
+1mcnp     version 6     ld=02/20/18                     10/15/21 19:33:15 
+ *************************************************************************                 probid =  10/15/21 19:33:15 
+ n=howitzer tasks 14
+
+ 
+  comment.  Physics models disabled.
+         1-       Howitzer- Calderon
+         2-       c ============================================================================
+         3-       c CELL CARDS
+         4-       c center cylinder
+         5-       1 1 -0.97 -7 -2 3 imp:n=1 $ center cyl top part
+         6-       2 1 -0.97 -7 -3 4 imp:n=1 $ center cyl bottom part but above hollow
+         7-       3 0 -7 -4 5 imp:n=1 $ center cyl hollow capsule
+         8-       4 1 -0.97 -7 -5 6 imp:n=1 $ center cyl hdpe plug
+         9-       c top center cylinder
+        10-       5 1 -0.97 -8 -2 3 imp:n=1 $ center cyl top part
+        11-       6 1 -0.97 -8 -3 4 imp:n=1 $ center cyl bottom part but above hollow
+        12-       7 2 -0.001225 -8 -4 5 (14:-15:16) (20:-15:16)
+        13-            imp:n=1 $ center cyl hollow capsule
+        14-       8 1 -0.97 -8 -5 6 imp:n=1 $ center cyl hdpe plug
+        15-       c left cylinder
+        16-       9 1 -0.97 -9 -2 3 imp:n=1 $ center cyl top part
+        17-       10 1 -0.97 -9 -3 4 imp:n=1 $ center cyl bottom part but above hollow
+        18-       11 2 -0.001225 -9 -4 5 (11:-12:13) imp:n=1 $ center cyl hollow capsule
+        19-       12 1 -0.97 -9 -5 6 imp:n=1 $ center cyl hdpe plug
+        20-       c right cylinder
+        21-       13 1 -0.97 -10 -2 3 imp:n=1 $ center cyl top part
+        22-       14 1 -0.97 -10 -3 4 imp:n=1 $ center cyl bottom part but above hollow
+        23-       15 2 -0.001225 -10 -4 5 (17:-18:19) imp:n=1 $ center cyl hollow capsule
+        24-       16 1 -0.97 -10 -5 6 imp:n=1 $ center cyl hdpe plug
+        25-       c FOILS
+        26-       17 3 -8.92 -14 15 -16 imp:n=1 $ Cu foil
+        27-       18 4 -19.3 -17 18 -19 imp:n=1 $ Au foil
+        28-       19 6 -6.1 -11 12 -13 imp:n=1 $ V foil
+        29-       20 5 -7.31 -20 15 -16 imp:n=1 $ In foil
+        30-       c
+        31-       21 1 -0.97 (7:2:-6) (8:2:-6) (9:2:-6) (10:2:-6) (-1 -2 6) imp:n=1
+        32-       99 0 (1:2:-6) imp:n=0
+        33-       c ============================================================================
+        34-       
+        35-       c ============================================================================
+        36-       c SURFACE CARDS
+        37-       1 cz 19.685 $ hdpe cylinder radius 7.75in
+        38-       2 pz 26.3525 $ upper bound of hdpe cylinder
+        39-       3 pz -14.2875 $ lower bound of "upper" piece
+        40-       4 pz -17.4625 $ upper bound for hollow capsule for source
+        41-       5 pz -21.9075 $ upper bound of solid hdpe "plug"
+        42-       6 pz -26.3525 $ lower bound of hdpe cylinder
+        43-       7 cz 1.74625 $ inner cylinders
+        44-       8 1 cz 1.74625 $ inner cylinders
+        45-       9 2 cz 1.74625 $ inner cylinders
+        46-       10 3 cz 1.74625 $ inner cylinders
+        47-       c Foil Dimensions
+        48-       c Vanadium: r = 0.6106348724cm
+        49-       11 5 c/y 0 -19.685 0.6106348724
+        50-       12 5 py 5.07746 $ left bound of foil cylinder
+        51-       13 5 py 5.08254 $ right bound of foil cylinder
+        52-       c Copper: r = 0.633106342cm
+        53-       14 c/y 0 -19.00189366 0.633106342
+        54-       15 py 5.07746 $ left bound of foil cylinder
+        55-       16 py 5.08254 $ right bound of foil cylinder
+        56-       c Gold: r = 0.6671650393cm
+        57-       17 4 c/y 0 -19.685 0.6671650393
+        58-       18 4 py 5.07746 $ left bound of foil cylinder
+        59-       19 4 py 5.08254 $ right bound of foil cylinder
+        60-       c Indium: r = 0.6353967258cm
+        61-       20 c/y 0 -20.37039673 0.6353967258
+        62-       c 21 py 5.07746 $ left bound of foil cylinder
+        63-       c 22 py 5.08254 $ right bound of foil cylinder
+        64-       c ============================================================================
+        65-       
+        66-       c ============================================================================
+        67-       c DATA CARDS
+        68-       mode n
+        69-       nps 100000
+        70-       tr1 0 5.08 0 1 0 0 0 1 0 0 0 1
+        71-       *tr2 0 -5.08 0 120 30 90 210 120 90 90 90 0 -1
+        72-       *tr3 0 -5.08 0 -120 -210 90 -30 -120 90 90 90 0 -1
+        73-       *tr4 0 0 0 -120 -210 90 -30 -120 90 90 90 0 -1
+        74-       *tr5 0 0 0 120 30 90 210 120 90 90 90 0 -1
+        75-       sdef erg d3 pos 0 0 -21.9075 ext d1 rad d2 axs 0 0 1 par 1
+        76-       c d1 is the height extension of the cylindrical source
+        77-       si1 0 4.445
+        78-       sp1 -21 0
+        79-       c d2 is the radial extension of the cylindrical source
+        80-       si2 0 1.2
+        81-       sp2 -21 1
+        82-       c d3 is energy distribution
+        83-       si3  0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 2.25 2.5 2.75 3 3.25 3.5 3.75
+        84-            4 4.25 4.5 4.75 5 5.25 5.5 5.75 6 6.25 6.5 6.75 7 7.25 7.5 7.75
+        85-            8 8.25 8.5 8.75 9 9.25 9.5 9.75 10 10.25 10.5 10.75 11 11.25 11.5
+        86-            11.75 12
+        87-       sp3 d 0 2.39E-4 4.95E-3 1.29E-2 1.69E-2 1.73E-2 1.54E-2 1.17E-2
+        88-               1.59E-2 1.93E-2 2.15E-2 2.62E-2 3.84E-2 4.96E-2 5.22E-2 5.01E-2
+        89-               4.72E-2 4.49E-2 4.32E-2 4.13E-2 3.89E-2 3.35E-2 2.76E-2 2.49E-2
+        90-               2.40E-2 2.09E-2 2.12E-2 2.39E-2 2.50E-2 2.50E-2 2.49E-2 2.43E-2
+        91-               2.30E-2 2.11E-2 1.94E-2 1.82E-2 1.75E-2 1.67E-2 1.47E-2 1.13E-2
+        92-               7.08E-3 3.98E-3 2.57E-3 1.34E-3 4.27E-4 5.93E-6 1.23E-8 9.78E-9
+        93-               7.74E-9
+        94-       c Materials
+        95-       c HDPE 0.97 g/cm^3
+        96-       m1     1001    0.667
+        97-              6000    0.333
+        98-       c Dry air 0.001225 g/cm^3
+        99-       m2     7014    0.78
+       100-              8016    0.21
+       101-             18000    0.01
+       102-       c Cu foil: 8.92 g/cm^3
+       103-       m3 29063.80c 1.0
+       104-       c Au foil: 19.3 g/cm^3
+       105-       m4 79197.80c 1.0
+       106-       c In foil: 7.31 g/cm^3
+       107-       m5 49115.80c 1.0
+       108-       c V foil: 6.1 g/cm^3
+       109-       m6 23051.80c 1.0
+       110-       c TALLIES
+       111-       f4:n 17 18 19 20 $ flux averaged over each foil
+       112-       fm4 (-1 3 -5:16) (-1 4 -5:16) (-1 5 -5:16)
+       113-            (-1 6 -5:16)
+       114-       c ============================================================================
+
+ ***************************************************
+ * Random Number Generator  =                    1 *
+ * Random Number Seed       =       19073486328125 *
+ * Random Number Multiplier =       19073486328125 *
+ * Random Number Adder      =                    0 *
+ * Random Number Bits Used  =                   48 *
+ * Random Number Stride     =               152917 *
+ ***************************************************
+
+ 
+  comment.  total nubar used if fissionable isotopes are present.
+1cells                                                                                                  print table 60
+
+                               atom        gram                                            neutron                                     
+              cell      mat   density     density     volume       mass            pieces importance                                   
+
+        1        1        1  1.25032E-01 9.70000E-01 3.89329E+02 3.77649E+02           1  1.0000E+00                                   
+        2        2        1  1.25032E-01 9.70000E-01 3.04163E+01 2.95038E+01           1  1.0000E+00                                   
+        3        3        0  0.00000E+00 0.00000E+00 4.25828E+01 0.00000E+00           1  1.0000E+00                                   
+        4        4        1  1.25032E-01 9.70000E-01 4.25828E+01 4.13053E+01           1  1.0000E+00                                   
+        5        5        1  1.25032E-01 9.70000E-01 3.89329E+02 3.77649E+02           1  1.0000E+00                                   
+        6        6        1  1.25032E-01 9.70000E-01 3.04163E+01 2.95038E+01           1  1.0000E+00                                   
+        7        7        2  5.02493E-05 1.22500E-03 0.00000E+00 0.00000E+00           0  1.0000E+00                                   
+        8        8        1  1.25032E-01 9.70000E-01 4.25828E+01 4.13053E+01           1  1.0000E+00                                   
+        9        9        1  1.25032E-01 9.70000E-01 3.89329E+02 3.77649E+02           1  1.0000E+00                                   
+       10       10        1  1.25032E-01 9.70000E-01 3.04163E+01 2.95038E+01           1  1.0000E+00                                   
+       11       11        2  5.02493E-05 1.22500E-03 0.00000E+00 0.00000E+00           0  1.0000E+00                                   
+       12       12        1  1.25032E-01 9.70000E-01 4.25828E+01 4.13053E+01           1  1.0000E+00                                   
+       13       13        1  1.25032E-01 9.70000E-01 3.89329E+02 3.77649E+02           1  1.0000E+00                                   
+       14       14        1  1.25032E-01 9.70000E-01 3.04163E+01 2.95038E+01           1  1.0000E+00                                   
+       15       15        2  5.02493E-05 1.22500E-03 0.00000E+00 0.00000E+00           0  1.0000E+00                                   
+       16       16        1  1.25032E-01 9.70000E-01 4.25828E+01 4.13053E+01           1  1.0000E+00                                   
+       17       17        3  8.53599E-02 8.92000E+00 6.39686E-03 5.70600E-02           1  1.0000E+00                                   
+       18       18        4  5.90077E-02 1.93000E+01 7.10363E-03 1.37100E-01           1  1.0000E+00                                   
+       19       19        6  7.21076E-02 6.10000E+00 5.95082E-03 3.63000E-02           1  1.0000E+00                                   
+       20       20        5  3.83113E-02 7.31000E+00 6.44323E-03 4.71000E-02           1  1.0000E+00                                   
+       21       21        1  1.25032E-01 9.70000E-01 0.00000E+00 0.00000E+00           0  1.0000E+00                                   
+       22       99        0  0.00000E+00 0.00000E+00 0.00000E+00 0.00000E+00           0  0.0000E+00                                   
+
+ total                                               1.89192E+03 1.79411E+03
+
+    minimum source weight = 1.0000E+00    maximum source weight = 1.0000E+00
+ 
+  comment.  threading will be used when possible in portions of mcnp6.
+ 
+  comment.  threading will be used for n/p/e table physics.
+ 
+  comment.  threading will generally not be used for model physics.
+1cross-section tables                                                                                   print table 100
+     XSDIR used: C:\MY_MCNP\MCNP_DATA/xsdir_mcnp6.2
+
+     table    length
+
+                        tables from file xdata/endf71x/H/1001.720nc                                      
+
+   1001.90c    3652  H1 ENDF71x (jlconlin)  Ref. see jlconlin (ref 06/04/2015  10:00:53)          mat 125      06/04/15
+                     Energy range:   1.00000E-11  to  2.00000E+01 MeV.
+                     particle-production data for deuterons being expunged from   1001.90c          
+
+                        tables from file xdata/endf71x/C/6000.710nc                                      
+
+   6000.80c   45022  C0 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)          mat 600      12/20/12
+                     Energy range:   1.00000E-11  to  1.50000E+02 MeV.
+                     particle-production data for protons   being expunged from   6000.80c          
+                     particle-production data for deuterons being expunged from   6000.80c          
+                     particle-production data for alphas    being expunged from   6000.80c          
+
+                        tables from file xdata/endf71x/N/7014.710nc                                      
+
+   7014.80c   67470  N14 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)         mat 725      12/16/12
+                     Energy range:   1.00000E-11  to  1.50000E+02 MeV.
+                     particle-production data for protons   being expunged from   7014.80c          
+                     particle-production data for deuterons being expunged from   7014.80c          
+                     particle-production data for alphas    being expunged from   7014.80c          
+
+                        tables from file xdata/endf71x/O/8016.710nc                                      
+
+   8016.80c  171194  O16 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)         mat 825      12/13/12
+                     Energy range:   1.00000E-11  to  1.50000E+02 MeV.
+                     particle-production data for protons   being expunged from   8016.80c          
+                     particle-production data for deuterons being expunged from   8016.80c          
+                     particle-production data for tritons   being expunged from   8016.80c          
+                     particle-production data for alphas    being expunged from   8016.80c          
+
+                        tables from file xdata/rmccsa                                                    
+
+  18000.35c    2182      endl85                                                                   (  18)       11/01/85
+                     Energy range:   1.00000E-10  to  2.00000E+01 MeV.
+                     temperature = 0.0000E+00 adjusted to 2.5300E-08
+
+                        tables from file xdata/endf71x/V/23051.710nc                                     
+
+  23051.80c  313802  V51 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)         mat2328      12/13/12
+                     Energy range:   1.00000E-11  to  2.00000E+01 MeV.
+                     particle-production data for protons   being expunged from  23051.80c          
+                     particle-production data for deuterons being expunged from  23051.80c          
+                     particle-production data for alphas    being expunged from  23051.80c          
+
+                        tables from file xdata/endf71x/Cu/29063.710nc                                    
+
+  29063.80c  252663  Cu63 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)        mat2925      12/16/12
+                     Energy range:   1.00000E-11  to  1.50000E+02 MeV.
+                     particle-production data for protons   being expunged from  29063.80c          
+                     particle-production data for deuterons being expunged from  29063.80c          
+                     particle-production data for tritons   being expunged from  29063.80c          
+                     particle-production data for alphas    being expunged from  29063.80c          
+
+                        tables from file xdata/endf71x/In/49115.710nc                                    
+
+  49115.80c  209983  In115 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)       mat4931      12/19/12
+                     Energy range:   1.00000E-11  to  2.00000E+01 MeV.
+                     probability tables used from 2.0000E-03 to 1.0000E-01 mev.
+ 
+  warning.   49115.80c lacks gamma-ray production cross sections.
+
+                        tables from file xdata/endf71x/Au/79197.710nc                                    
+
+  79197.80c  320922  Au197 ENDF71x (jlconlin)  Ref. see jlconlin (ref 09/10/2012  10:00:53)       mat7925      12/19/12
+                     Energy range:   1.00000E-11  to  3.00000E+01 MeV.
+
+  total     1386890
+ 
+  warning.  neutron energy cutoff is below some cross-section tables.
+ 
+  comment.  1 cross sections modified by free gas thermal treatment.
+
+1particles and energy limits                                                                            print table 101
+
+                         particle      maximum       smallest      largest       always        always
+                         cutoff        particle      table         table         use table     use model
+   particle type         energy        energy        maximum       maximum       below         above
+
+    1  n    neutron     0.0000E+00    1.0000E+36    2.0000E+01    1.5000E+02    1.0000E+36    1.0000E+36
+ 
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ------------------------------------------------------------------------------------------
+ =====> Set up arrays for hash-based fast table search for xsec data
+
+    number of hash bins   =     8192
+    min hash table energy =  1.00000E-11
+    max hash table energy =  1.50000E+02
+
+           nuclide      ne      emin        emax     ave_bins  min_bins  max_bins
+            1001.90c     590 1.00000E-11 2.00000E+01       0.1       0.0       1.0
+            6000.80c    1326 1.00000E-11 1.50000E+02       0.2       0.0      11.0
+            7014.80c    1826 1.00000E-11 1.50000E+02       0.2       0.0      18.0
+            8016.80c    2917 1.00000E-11 1.50000E+02       0.4       0.0      33.0
+           18000.35c     259 1.00000E-10 2.00000E+01       0.0       0.0       2.0
+           23051.80c   18588 1.00000E-11 2.00000E+01       2.3       0.0     122.0
+           29063.80c   25630 1.00000E-11 1.50000E+02       3.1       0.0     141.0
+           49115.80c   33061 1.00000E-11 2.00000E+01       4.0       0.0     121.0
+           79197.80c   43285 1.00000E-11 3.00000E+01       5.3       0.0     190.0
+
+ ------------------------------------------------------------------------------------------
+
+
+ ***********************************************************************************************************************
+
+ dump no.    1 on file howitzerr     nps =           0     coll =              0     ctm =        0.00   nrn =          
+       0
+
+         2 warning messages so far.
+1problem summary                                                                                                           
+
+      run terminated when      100000  particle histories were done.
++                                                                                                    10/15/21 19:33:18 
+
+ =====>     180.54 M histories/hr    (based on wall-clock time in mcrun)
+
+
+      Howitzer- Calderon     probid =  10/15/21 19:33:15 
+
+ neutron creation    tracks      weight        energy            neutron loss        tracks      weight        energy
+                                 (per source particle)                                           (per source particle)
+
+ source              100000    1.0000E+00    4.9651E+00          escape               57441    4.7085E-01    1.1172E+00
+ nucl. interaction        0    0.            0.                  energy cutoff            0    0.            0.        
+ particle decay           0    0.            0.                  time cutoff              0    0.            0.        
+ weight window            0    0.            0.                  weight window            0    0.            0.        
+ cell importance          0    0.            0.                  cell importance          0    0.            0.        
+ weight cutoff            0    1.0680E-01    4.0760E-09          weight cutoff        42559    1.0576E-01    4.0301E-09
+ e or t importance        0    0.            0.                  e or t importance        0    0.            0.        
+ dxtran                   0    0.            0.                  dxtran                   0    0.            0.        
+ forced collisions        0    0.            0.                  forced collisions        0    0.            0.        
+ exp. transform           0    0.            0.                  exp. transform           0    0.            0.        
+ upscattering             0    0.            6.6530E-07          downscattering           0    0.            3.7828E+00
+ photonuclear             0    0.            0.                  capture                  0    5.3020E-01    6.5054E-02
+ (n,xn)                   0    0.            0.                  loss to (n,xn)           0    0.            0.        
+ prompt fission           0    0.            0.                  loss to fission          0    0.            0.        
+ delayed fission          0    0.            0.                  nucl. interaction        0    0.            0.        
+ prompt photofis          0    0.            0.                  particle decay           0    0.            0.        
+ tabular boundary         0    0.            0.                  tabular boundary         0    0.            0.        
+ tabular sampling         0    0.            0.                  elastic scatter          0    0.            0.        
+     total           100000    1.1068E+00    4.9651E+00              total           100000    1.1068E+00    4.9651E+00
+
+   number of neutrons banked                       0        average time of (shakes)              cutoffs
+   neutron tracks per source particle     1.0000E+00          escape            3.0515E+03          tco   1.0000E+33
+   neutron collisions per source particle 1.2404E+02          capture           1.3896E+04          eco   0.0000E+00
+   total neutron collisions                 12403705          capture or escape 8.7955E+03          wc1  -5.0000E-01
+   net multiplication              1.0000E+00 0.0000          any termination   1.1020E+04          wc2  -2.5000E-01
+
+ computer time so far in this run     0.56 minutes            maximum number ever in bank         0
+ computer time in mcrun               0.46 minutes            bank overflows to backup file       0
+ source particles per minute            2.1880E+05
+ random numbers generated                211610820            most random numbers used was       19779 in history       73545
+
+ range of sampled source weights = 1.0000E+00 to 1.0000E+00
+
+ number of histories processed by each thread
+        6677        7476        7068        7235        7166        7268        7090        7104        7049        7237
+        7021        7259        7301        7049
+1neutron  activity in each cell                                                                         print table 126
+
+                       tracks     population   collisions   collisions     number        flux        average      average
+              cell    entering                               * weight     weighted     weighted   track weight   track mfp
+                                                          (per history)    energy       energy     (relative)      (cm)
+
+        1        1       18289         7821       122316    6.7373E-01   1.3722E-04   9.0443E-01   6.2695E-01   1.3295E+00
+        2        2       27576        19851        74591    4.8281E-01   8.4372E-04   2.6773E+00   8.2060E-01   2.9541E+00
+        3        3      119075       100000            0    0.0000E+00   4.1685E-03   4.2703E+00   9.4144E-01   0.0000E+00
+        4        4       25400        19792        67559    4.7032E-01   1.0401E-03   2.7515E+00   8.5969E-01   3.0374E+00
+        5        5       13538         5934        93131    4.9639E-01   1.1668E-04   8.1049E-01   6.0124E-01   1.2381E+00
+        6        6       11882         7017        53178    3.1996E-01   2.3284E-04   1.2900E+00   7.0079E-01   1.7037E+00
+        7        7       19354        10350           19    1.0068E-04   3.8608E-04   1.8070E+00   7.5204E-01   6.7065E+03
+        8        8        9854         6679        45774    2.9399E-01   3.2084E-04   1.4764E+00   7.5613E-01   1.9051E+00
+        9        9       13866         5890        97103    5.1244E-01   1.0672E-04   7.4064E-01   5.9503E-01   1.1738E+00
+       10       10       12031         7170        53133    3.2358E-01   2.4261E-04   1.3236E+00   7.0846E-01   1.7275E+00
+       11       11       18824        10424           19    1.0438E-04   3.6745E-04   1.7425E+00   7.5092E-01   6.5884E+03
+       12       12       10309         6870        47190    3.0396E-01   3.1767E-04   1.5001E+00   7.5596E-01   1.9130E+00
+       13       13       13527         5872        94073    5.0607E-01   1.1206E-04   7.5812E-01   6.0601E-01   1.1930E+00
+       14       14       12073         7107        53973    3.2430E-01   2.2789E-04   1.2846E+00   7.0050E-01   1.6917E+00
+       15       15       18867        10417           17    1.0282E-04   3.5664E-04   1.7205E+00   7.5133E-01   6.4785E+03
+       16       16       10089         6758        46333    3.0000E-01   3.1528E-04   1.5034E+00   7.5846E-01   1.9082E+00
+       17       17         862          832            2    1.5202E-05   4.1943E-04   1.8009E+00   7.7249E-01   2.4602E+00
+       18       18         889          868           24    1.4351E-04   3.6171E-04   1.7433E+00   7.4953E-01   1.4198E+00
+       19       19         745          717            7    4.2756E-05   2.4089E-04   1.5769E+00   7.3351E-01   2.5418E+00
+       20       20         777          749           18    1.0894E-04   3.8976E-04   1.7840E+00   7.6977E-01   3.2073E+00
+       21       21      259179        98843     11555245    6.4424E+01   1.7334E-04   1.0854E+00   6.4559E-01   1.4985E+00
+
+           total        617006       339961     12403705    6.9432E+01
+
+1tally        4        nps =      100000
+           tally type 4    track length estimate of particle flux.                             
+           particle(s): neutrons 
+
+           volumes 
+                   cell:      17           18           19           20                                            
+                         6.39686E-03  7.10363E-03  5.95082E-03  6.44323E-03
+ 
+ cell  17                                                                                                                              
+ multiplier bin:  -1.00000E+00         3          -5    :           16                                                                 
+                 3.02160E-03 0.0617
+ 
+ cell  17                                                                                                                              
+ multiplier bin:  -1.00000E+00         4          -5    :           16                                                                 
+                 1.92776E-01 0.6392
+ 
+ cell  17                                                                                                                              
+ multiplier bin:  -1.00000E+00         5          -5    :           16                                                                 
+                 1.32002E-06 0.3490
+ 
+ cell  17                                                                                                                              
+ multiplier bin:  -1.00000E+00         6          -5    :           16                                                                 
+                 4.10535E-03 0.0700
+ 
+ cell  18                                                                                                                              
+ multiplier bin:  -1.00000E+00         3          -5    :           16                                                                 
+                 2.10763E-03 0.0665
+ 
+ cell  18                                                                                                                              
+ multiplier bin:  -1.00000E+00         4          -5    :           16                                                                 
+                 5.05011E-02 0.0817
+ 
+ cell  18                                                                                                                              
+ multiplier bin:  -1.00000E+00         5          -5    :           16                                                                 
+                 6.84049E-07 0.3571
+ 
+ cell  18                                                                                                                              
+ multiplier bin:  -1.00000E+00         6          -5    :           16                                                                 
+                 2.87612E-03 0.0753
+ 
+ cell  19                                                                                                                              
+ multiplier bin:  -1.00000E+00         3          -5    :           16                                                                 
+                 3.37132E-03 0.2565
+ 
+ cell  19                                                                                                                              
+ multiplier bin:  -1.00000E+00         4          -5    :           16                                                                 
+                 1.13561E-01 0.2916
+ 
+ cell  19                                                                                                                              
+ multiplier bin:  -1.00000E+00         5          -5    :           16                                                                 
+                 1.01079E-06 0.4463
+ 
+ cell  19                                                                                                                              
+ multiplier bin:  -1.00000E+00         6          -5    :           16                                                                 
+                 4.82560E-03 0.2824
+ 
+ cell  20                                                                                                                              
+ multiplier bin:  -1.00000E+00         3          -5    :           16                                                                 
+                 1.20586E-03 0.0611
+ 
+ cell  20                                                                                                                              
+ multiplier bin:  -1.00000E+00         4          -5    :           16                                                                 
+                 5.83091E-02 0.5095
+ 
+ cell  20                                                                                                                              
+ multiplier bin:  -1.00000E+00         5          -5    :           16                                                                 
+                 4.72447E-07 0.3354
+ 
+ cell  20                                                                                                                              
+ multiplier bin:  -1.00000E+00         6          -5    :           16                                                                 
+                 1.64671E-03 0.0689
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally        4
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.06      yes          yes            0.04      yes         yes            constant    random       3.83
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+
+ ===================================================================================================================================
+
+
+ this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
+ the results in other bins associated with this tally may not meet these statistical criteria.
+
+ ----- estimated confidence intervals:  -----
+
+ estimated asymmetric confidence interval(1,2,3 sigma): 2.8498E-03 to 3.2245E-03; 2.6625E-03 to 3.4119E-03; 2.4751E-03 to 3.5993E-03
+ estimated  symmetric confidence interval(1,2,3 sigma): 2.8352E-03 to 3.2080E-03; 2.6488E-03 to 3.3944E-03; 2.4624E-03 to 3.5808E-03
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally 4 with nps = 100000              print table 160
+
+
+ normed average tally per history  = 3.02160E-03          unnormed average tally per history  = 1.93287E-05
+ estimated tally relative error    = 0.0617               estimated variance of the variance  = 0.0450
+ relative error from zero tallies  = 0.0345               relative error from nonzero scores  = 0.0511
+
+ number of nonzero history tallies =         832          efficiency for the nonzero tallies  = 0.0083
+ history number of largest  tally  =       21249          largest  unnormalized history tally = 4.15470E-02
+ (largest  tally)/(average tally)  = 2.14949E+03          (largest  tally)/(avg nonzero tally)= 1.78838E+01
+
+ (confidence interval shift)/mean  = 0.0052               shifted confidence interval center  = 3.03718E-03
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            3.02160E-03             3.08652E-03                     0.021485
+      relative error                  6.16885E-02             6.39483E-02                     0.036631
+      variance of the variance        4.49514E-02             4.74501E-02                     0.055587
+      shifted center                  3.03718E-03             3.03901E-03                     0.000600
+      figure of merit                 5.74970E+02             5.35052E+02                    -0.069425
+
+ the estimated inverse power slope of the  41 largest  tallies starting at 7.40367E-03 is 3.8268
+ the history score probability density function appears to have an unsampled region at the largest  history scores:
+ please examine. see print table 161.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.188E+05)*( 5.126E-02)**2 = (2.188E+05)*(2.628E-03) = 5.750E+02
+
+1status of the statistical checks used to form confidence intervals for the mean for each tally bin
+
+
+ tally   result of statistical checks for the tfc bin (the first check not passed is listed) and error magnitude check for all bins
+
+        4   passed the 10 statistical checks for the tally fluctuation chart bin result               
+         missed all bin error check:    16 tally bins had     0 bins with zeros and     9 bins with relative errors exceeding 0.10
+
+
+ the 10 statistical checks are only for the tally fluctuation chart bin and do not apply to other tally bins.
+
+ warning.       1 of the     1 tallies had bins with relative errors greater than recommended.
+1tally fluctuation charts                              
+
+                            tally        4
+          nps      mean     error   vov  slope    fom
+         8000   2.9211E-03 0.1771 0.0907  0.0     816
+        16000   2.8513E-03 0.1319 0.0626  0.0     800
+        24000   3.0175E-03 0.1317 0.2260  0.0     532
+        32000   3.0160E-03 0.1090 0.1561  0.0     582
+        40000   2.9426E-03 0.0961 0.1191  0.0     598
+        48000   3.0812E-03 0.0865 0.0813  0.0     615
+        56000   2.9615E-03 0.0803 0.0700  0.0     603
+        64000   2.9149E-03 0.0737 0.0618  4.2     626
+        72000   2.9440E-03 0.0672 0.0538  4.3     670
+        80000   3.0192E-03 0.0672 0.0520  3.7     605
+        88000   2.9853E-03 0.0637 0.0462  3.8     611
+        96000   2.9852E-03 0.0606 0.0407  4.3     620
+       100000   3.0216E-03 0.0617 0.0450  3.8     575
+
+ ***********************************************************************************************************************
+
+ dump no.    2 on file howitzerr     nps =      100000     coll =       12403705     ctm =        0.46   nrn =        
+ 211610820
+
+         3 warning messages so far.
+
+
+ run terminated when      100000  particle histories were done.
+
+ computer time =    0.56 minutes
+
+ mcnp     version 6     02/20/18                     10/15/21 19:33:18                     probid =  10/15/21 19:33:15 
