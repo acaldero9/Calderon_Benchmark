@@ -2075,19 +2075,11 @@ c Empty guide tube geometry at dashpot
 c BP Plenum Geometry
 17 cz 0.21400 $ air
 18 cz 0.23051 $ SS304
-c use surface 11 for helium
-c use surface 12 for SS304
-c use surface 15 for water
-c use surface 16 for zircaloy
 401 cz 0.24130
 402 cz 0.42672
 c control rod pin plenum geometry
-c 403 cz 0.06459 $ inconel
 404 cz 0.38608 $ helium
 405 cz 0.37845
-c surface 12 ss304
-c surface 13 water
-c surface 14 zircaloy
 406 cz 0.37338
 407 cz 0.38227
 c Axial Fuel Rod Dimensions
@@ -2128,8 +2120,6 @@ c Axial Fuel Rod Dimensions
 115 pz -230.000
 c Upper Fuel Pin Plenum
 116 cz 0.06459 $ inconel material
-c use surface 2 for the outer radius of helium
-c use surface 3 for the outer radius of the zircaloy
 c ----------------------------------------------------------------------------
 117 px -0.61015 $ water dimensions for fuel with grid top/bottom
 118 px 0.61015 $ water dimensions for fuel with grid top/bottom
@@ -2140,8 +2130,6 @@ c ----------------------------------------------------------------------------
 123 py -0.61049 $ water dimensions for fuel with grid intermediate
 124 py 0.61049 $ water dimensions for fuel with grid intermediate
 c FIG.4 empty guide tube above dashpot dimensions
-c 21 cz 0.56134 $ water radius (SAME as surf 13)
-c 22 cz 0.60198 $ zircaloy shell (SAME as surf 14)
 c Basic fuel pin lattice cell
 5 px  0.62992 $ 1st side of square lattice
 6 px -0.62992 $ 2nd side of square lattice
@@ -2160,10 +2148,10 @@ c Basic square assembly
 236 px -10.75182 $ water gap
 237 py 10.75182 $ water gap
 238 py -10.75182 $ water gap
-335 px 11
-336 px -11
-337 py 11
-338 py -11
+335 px 10.7087
+336 px -10.7087
+337 py 10.7087
+338 py -10.7087
 c core dimensions
 40 cz 187.960 $ core barrel inner rad. SS304
 41 cz 193.675 $ core barrel outer rad. SS304
@@ -2224,10 +2212,10 @@ c core dimensions
 20 pz -231
 813 pz 233
 814 pz -233
-805 px 0.7
-806 px -0.7
-807 py 0.7
-808 py -0.7
+805 px 0.63
+806 px -0.63
+807 py 0.63
+808 py -0.63
 809 1 py 0
 810 2 py 0
 811 3 px 0
